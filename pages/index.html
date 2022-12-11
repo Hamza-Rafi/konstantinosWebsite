@@ -1,0 +1,160 @@
+---
+permalink: /
+layout: base
+title: Konstantinos Markantonakis
+---
+
+<style>
+    .picture{
+        width: 100%;
+        height: 100%;
+    }
+    .accordion{
+        max-width: 982px;
+    }
+    .accordion>div>div>h5{
+        color: #8DF6E6;
+    }
+    .accordionBody>div{
+        width: 33%;
+        /* border: 1px solid black; */
+    }
+    .accordionBody{
+        display: flex;
+        justify-content: space-around;
+        background-color: #3E4D4E;
+        color: #fff;
+
+    }
+    .accordionTitle{
+        background-color: #4A4945;
+        color: #fff;
+        border-bottom: 1px solid black;
+        padding: 0.5rem;
+    }
+    .leftAccordionElements{
+        padding-right: 1rem;
+        text-align: right;
+        border-right: 2px solid #E27C1F;
+    }
+    .rightAccordionElements{
+        text-align: left;
+        padding-left: 1rem;
+        border-left: 2px solid #E27C1F;
+
+
+    }
+    .accordionElement:hover{
+        cursor: pointer;
+    }
+    .highlightGold{
+        color: #E27C1F;
+    }
+    .recentWork{
+        max-width: 982px;
+    }
+    .posts{
+        display: flex;
+    }
+    .posts>div{
+        margin-right:1rem;
+        height: 100px;
+        width: 200px;
+        border: 1px solid black;
+    }
+</style>
+<div class="grid">
+    <div class="picture">
+        <img width="982" height="252" src="/assets/images/front-photo.jpg" alt="">
+    </div>
+    
+    <div class="accordion">
+        <div class="accordionTitle">
+            <h4>Areas of research</h4>
+        </div>
+        <div class="accordionBody">
+            <div class="leftAccordionElements">
+                <h5>Active research</h5>
+    
+                {% for item in site.data.accordion.activeResearch %}
+                    <p class="accordionElement" data-element="{{item.title}}" data-description="{{item.description}}">{{item.title}}</p>
+                {% endfor %}
+            </div>
+            <div class="accordionContent" id="accordionContent">
+                content
+            </div>
+            <div class="rightAccordionElements">
+                <h5>Research</h5>
+                
+                {% for item in site.data.accordion.research %}
+                    <p class="accordionElement" data-title="{{item.title}}" data-description="{{item.description}}">{{item.title}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var accordionElements = [...document.getElementsByClassName("accordionElement")]
+        console.log(accordionElements)
+        
+        accordionElements.forEach(accordionElement => {
+            accordionElement.addEventListener('click', () => {
+                let accordionContent = document.getElementById('accordionContent')
+                accordionContent.textContent = accordionElement.dataset.description
+
+                accordionElements.forEach(item => {item.classList.remove('highlightGold')})
+                console.log("nom")
+                accordionElement.classList.add('highlightGold')
+            })
+            
+
+        })
+
+    </script>
+
+    <div class="news">
+        <h4 class="newsTitle">News</h4>
+        <div class="posts">
+            <div class="newsElement"">
+                <h1>News 1</h1>
+            </div>  
+            <div class="newsElement"">
+                <h1>News 2</h1>
+            </div>  
+        </div>
+    </div>
+
+    <div class="recentWork">
+        
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <h3>Recent work</h3>
+            <li class="nav-item ml-auto">
+              <a class="nav-link" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="profile" aria-selected="false">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#consulting" role="tab" aria-controls="contact" aria-selected="false">Consulting</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
+                {% for item in site.data.publications %}
+                <p>{{item}}</p>
+                {%endfor%}
+                
+            </div>
+            <div class="tab-pane" id="books" role="tabpanel">
+                books
+            </div>
+            <div class="tab-pane" id="consulting" role="tabpanel">
+                consulting
+            </div>
+          </div>
+    </div>
+
+
+</div>
+
+    

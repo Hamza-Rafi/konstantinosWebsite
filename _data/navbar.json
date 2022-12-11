@@ -1,0 +1,101 @@
+[
+    {
+        "name": "SHORT BIO",
+        "link": "/short-bio",
+        "isDropdown": false,
+        "dropdownItems":  []
+    },
+    {
+        "name": "RESEARCH",
+        "link": "/research",
+        "isDropdown": true,
+        "dropdownItems":  [
+            {
+                "name": "AREAS OF RESEARCH",
+                "link": "/research/areas-of-research",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "ALL PUBLICATIONS",
+                "link": "/research/publications",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "PHD STUDENTS",
+                "link": "/research/phd-students",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "PHD OPPURTUNITIES",
+                "link": "/research/phd-oppurtunities",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "RESEARCH PROJECTS",
+                "link": "/research/research-projects",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "CONFERENCES",
+                "link": "/research/conferences",
+                "isDropdown": false,
+                "dropdownItems":  []
+            }
+        ]
+    },
+    {
+        "name": "TEACHING",
+        "link": "/teaching",
+        "isDropdown": false,
+        "dropdownItems":  []
+    },
+    {
+        "name": "IMPACT",
+        "link": "/impact",
+        "isDropdown": true,
+        "dropdownItems":  [
+            {
+                "name": "COMMERCIALISATION",
+                "link": "/impact/commercialisation",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "RESEARCH IMPACT",
+                "link": "/impact/research-impact",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "POLICY IMPACT",
+                "link": "/impact/policy-impact",
+                "isDropdown": false,
+                "dropdownItems":  []
+            },
+            {
+                "name": "PATENTS",
+                "link": "/impact/patents",
+                "isDropdown": false,
+                "dropdownItems":  []
+            }
+        ]
+    },
+    {
+        "name": "NEWS",
+        "link": "/news",
+        "isDropdown": false,
+        "dropdownItems":  []
+    },
+    {
+        "name": "CONTACT",
+        "link": "/contact",
+        "isDropdown": false,
+        "dropdownItems":  []
+    }
+
+]

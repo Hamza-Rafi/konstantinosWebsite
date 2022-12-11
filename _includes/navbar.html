@@ -1,0 +1,69 @@
+<nav class="navbar  sticky-top navbar-expand-lg navbar-light navbar-custom-wrapper">
+    <a class="navbar-brand navbar-brand-custom" href="/">KONSTANTINOS MARKANTONAKIS</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% for item in site.data.navbar %}
+                
+                {% if item.isDropdown == true %}
+                    <li class="nav-item dropdown-custom">
+                        <a href="{{item.link}}" class="nav-link text-white dropbtn-custom">{{item.name}}</a>
+                        
+                        <div class="dropdown-content-custom">
+                            {% for dropdownItem in item.dropdownItems %}
+                                <a href="{{dropdownItem.link}}">{{dropdownItem.name}}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{{item.link}}" class="nav-link text-white">{{item.name}}</a>
+                    </li>
+                {% endif %}
+
+            {% endfor %}
+
+            <!-- <li class="nav-item">
+                <a class="nav-link text-white" href="/short-bio">SHORT BIO</a>
+            </li>
+
+            <li class="nav-item dropdown-custom">
+                <a class="nav-link text-white dropbtn-custom" href="/research" >
+                    RESEARCH
+                </a>
+                <div class="dropdown-content-custom">
+                    <a href="/research/areas-of-research" class="">AREAS OF RESEARCH</a>
+                    <a href="/research/publications" class="">ALL PUBLICATIONS</a>
+                    <a href="/research/phd-students" class="">PHD STUDENTS</a>
+                    <a href="/research/research-oppurtunities" class="">RESEARCH OPPURTUNITIES</a>
+                    <a href="/research/conferences" class="">CONFERENCES</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-white" href="/teaching">TEACHING</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle  text-white" href="/impact" id="impactDropdown" role="button" data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    IMPACT
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="/impact/commercialisation" class="dropdown-item">COMMERCIALISATION </a>
+                    <a href="/impact/research-impact" class="dropdown-item">RESEARCH IMPACT</a>
+                    <a href="/impact/policy-impact" class="dropdown-item">POLICY IMPACT</a>
+                    <a href="/impact/patents" class="dropdown-item">PATENTS</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/news">NEWS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/contact">CONTACT</a>
+            </li> -->
+        </ul>
+    </div>
+</nav>
