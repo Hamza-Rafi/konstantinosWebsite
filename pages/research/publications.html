@@ -1,0 +1,32 @@
+---
+permalink: /research/publications
+layout: base
+---
+
+<h1>All Publications</h1> 
+<hr>
+
+<h3>Publications</h3>
+
+{% assign publications = site.data.publications %}
+{% assign loopUntil = publications.size | minus: 1 %}
+
+<p>Total number of publications: {{publications.size}}</p>
+{% for i in (0..loopUntil) %}
+    <p>
+        <span>[{{ publications.size | minus: i }}]</span>
+        {% for author in publications[i].authors %}
+            {% if author.link %}
+                <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
+            {% else %}
+                <span>{{author.name}}</span>
+            {% endif %}
+            <span>,</span>
+        {% endfor %}
+
+        <span>{{publications[i].publishDate}}</span>
+        <span>,</span>
+        <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
+    </p>
+
+{%endfor%}

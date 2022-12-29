@@ -24,13 +24,17 @@ title: Konstantinos Markantonakis
         justify-content: space-around;
         background-color: #3E4D4E;
         color: #fff;
-
     }
     .accordionTitle{
         background-color: #4A4945;
         color: #fff;
         border-bottom: 1px solid black;
         padding: 0.5rem;
+    }
+    .accordionContent{
+        text-align: justify;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     .leftAccordionElements{
         padding-right: 1rem;
@@ -41,8 +45,9 @@ title: Konstantinos Markantonakis
         text-align: left;
         padding-left: 1rem;
         border-left: 2px solid #E27C1F;
-
-
+    }
+    .accordionElement{
+        margin: 0.25rem;
     }
     .accordionElement:hover{
         cursor: pointer;
@@ -81,11 +86,10 @@ title: Konstantinos Markantonakis
                 {% endfor %}
             </div>
             <div class="accordionContent" id="accordionContent">
-                content
+                
             </div>
             <div class="rightAccordionElements">
                 <h5>Research</h5>
-                
                 {% for item in site.data.accordion.research %}
                     <p class="accordionElement" data-title="{{item.title}}" data-description="{{item.description}}">{{item.title}}</p>
                 {% endfor %}
@@ -95,10 +99,14 @@ title: Konstantinos Markantonakis
 
     <script>
         var accordionElements = [...document.getElementsByClassName("accordionElement")]
-        console.log(accordionElements)
+        console.log(accordionElements[0])
+        
+        // set first one active by default
+        accordionElements[0].classList.add('highlightGold')
+        document.getElementById('accordionContent').textContent = accordionElements[0].dataset.description
         
         accordionElements.forEach(accordionElement => {
-            accordionElement.addEventListener('click', () => {
+            accordionElement.addEventListener('mouseover', () => {
                 let accordionContent = document.getElementById('accordionContent')
                 accordionContent.textContent = accordionElement.dataset.description
 
@@ -129,8 +137,11 @@ title: Konstantinos Markantonakis
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <h3>Recent work</h3>
             <li class="nav-item ml-auto">
-              <a class="nav-link" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Publications</a>
+              <a class="nav-link" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Recent Publications</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#presentations" role="tab" aria-controls="contact" aria-selected="false">Presentations</a>
+              </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="profile" aria-selected="false">Books</a>
             </li>
@@ -140,10 +151,29 @@ title: Konstantinos Markantonakis
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
-                {% for item in site.data.publications %}
-                <p>{{item}}</p>
+                {% assign publications = site.data.publications %}
+                {% for i in (0..9) %}
+                    <p>
+                        <span>[{{ publications.size | minus: i }}]</span>
+                        {% for author in publications[i].authors %}
+                            {% if author.link %}
+                                <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
+                            {% else %}
+                                <span>{{author.name}}</span>
+                            {% endif %}
+                            <span>,</span>
+                        {% endfor %}
+
+                        <span>{{publications[i].publishDate}}</span>
+                        <span>,</span>
+                        <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
+                    </p>
+
                 {%endfor%}
                 
+            </div>
+            <div class="tab-pane" id="presentations" role="tabpanel">
+                presentation
             </div>
             <div class="tab-pane" id="books" role="tabpanel">
                 books

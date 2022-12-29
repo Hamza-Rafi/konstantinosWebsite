@@ -5,15 +5,13 @@ layout: base
 
 # Contact
 ---
-<mark>What is this PGP key??</mark>
-
 ### Royal Holloway Contact
 
 **Email:** K.Markantonakis@rhul.ac.uk
 
 **Phone:** +44 1784 414409
 
-**PGP key:** Click here to [download](http://www.isg.rhul.ac.uk/~kostasm/data/Markantonakis_pubpgp.asc) (Please right click and select "Save as" to download)
+**PGP key:** Click here to [download](/assets/pgpKey.pgp)
 
 **Postal address:**
 
