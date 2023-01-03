@@ -5,12 +5,9 @@ title: Konstantinos Markantonakis
 ---
 
 <style>
-    .picture{
-        width: 100%;
-        height: 100%;
-    }
     .accordion{
         max-width: 982px;
+        margin-top: 1rem;
     }
     .accordion>div>div>h5{
         color: #8DF6E6;
@@ -57,6 +54,7 @@ title: Konstantinos Markantonakis
     }
     .recentWork{
         max-width: 982px;
+        margin-top: 1rem;
     }
     .posts{
         display: flex;
@@ -67,10 +65,43 @@ title: Konstantinos Markantonakis
         width: 200px;
         border: 1px solid black;
     }
+    .picture{
+        width: 100%;
+        height: 100%;
+
+        position: relative;
+    }
+    .pictureText{
+        width: 50%;
+        max-height: 60%;
+        position: absolute;
+
+        padding: 0.5rem;
+        overflow-y: scroll;
+
+        top: 50%;
+        right: 1rem;
+        transform: translate(0%, -50%);
+
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .news{
+        margin-top: 1rem;
+    }
+
 </style>
 <div class="grid">
     <div class="picture">
         <img width="982" height="252" src="/assets/images/front-photo.jpg" alt="">
+        <div class="pictureText">
+            <p>I am a professor of Information Security at the 
+                <a href="http://www.isg.rhul.ac.uk/">Information Security Group</a>at 
+                <a href="http://www.rhul.ac.uk/">Royal Holloway, University of London</a>
+                , the director of the 
+                <a href="https://scc.rhul.ac.uk/">Smart Card and IoT Security Centre</a>
+                , and the director of the Transformative Digital Technologies, Security and Society Catalyst. My main research areas include: trusted execution environments; embedded devices and cyber-physical systems security; smart cards and RFIDs security; avionics and drone security; automotive, payment and transport systems security; mobile phones, near-field communication (NFC) and secure element security; and ambient sensors and Internet-of-Things (IoT) security.</p>
+        </div>
     </div>
     
     <div class="accordion">
@@ -179,7 +210,30 @@ title: Konstantinos Markantonakis
                 books
             </div>
             <div class="tab-pane" id="consulting" role="tabpanel">
-                consulting
+                <h3>Areas of Expertise</h3>
+                <p>I initially got involved in Information Security consulting projects while pursuing my PhD in Information Security at Royal Holloway. Since then, I have worked on a number of Information Security and Smart Card related projects with numerous high profile clients, and I continue to provide consultancy for a variety of Information Security and Smart Card related areas: </p>
+                <ul>
+                    <li>Smart Card physical security analysis</li>
+                    <li>Multi-application Smart Card migration program planning</li>
+                    <li>Project management for financial institutions and transport operators</li>
+                    <li>Business case development for chip migration programs</li>
+                    <li>Smart Card application (Java card, SIM card, Multos) security review, design and development</li>
+                    <li>Smart Card security evaluations (Common Criteria), Security Target and Protection Profile Development</li>
+                    <li>Risk analysis on Smart Card technology, protocols and systems</li>
+                    <li>Smart Card security protocol design and review</li>
+                    <li>Security of mobile phone platforms and secure elements</li>
+                    <li>Contactless Smart Card/RFID security and Mifare card technology</li>
+                </ul>
+                <h3>Selected Projects</h3>
+                <ul>
+                    <li>I was a part of the team, along with colleagues from the Information Security Group’s Smart Card Centre, which performed a counter expertise analysis of a report into the Dutch OV-Chipkaart transport system in 2008. This was in response to some recently published attacks on Mifare Classic smart cards. For more information please follow these links: <a href="https://web.archive.org/web/20191025082324/http:/www.isg.rhul.ac.uk/node/274">ISG_Dutch</a> and <a href="https://web.archive.org/web/20191025082324/http:/www.scc.rhul.ac.uk/public/OV Task Explanatory Note.pdf">SCC_Dutch</a>. This was a high profile piece of work, reported extensively on the internet (see further details <a href="https://web.archive.org/web/20191025082324/http:/www.thetechherald.com/article.php/200816/701">here</a>).</li>
+                    <li>Since then, our team got involved in further work relating to Mifare and chip migration issues, and planning for the Dutch transport system.</li>
+                    <li>I was involved in preparing an evaluation paper for different options in which security controllers can exist in mobile devices. The document was also presented as an ETSI internal document and an early version can be found <a href="https://web.archive.org/web/20191025082324/http:/www.crisptelecom.com/files/simuc.pdf">here</a>.</li>
+                    <li>I was also involved in the preparation and delivery of a smart card security training course for the Information Security department of a major financial institution.</li>
+                    <li>Security analysis of public key cryptography in Smart card devices and tools with restricted processing resources.</li>
+                    <li>Security analysis of a smart card system for the provision of wireless telecommunications services.</li>
+                </ul>
+
             </div>
           </div>
     </div>
