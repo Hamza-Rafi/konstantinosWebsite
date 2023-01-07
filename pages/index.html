@@ -56,19 +56,10 @@ title: Konstantinos Markantonakis
         max-width: 982px;
         margin-top: 1rem;
     }
-    .posts{
-        display: flex;
-    }
-    .posts>div{
-        margin-right:1rem;
-        height: 100px;
-        width: 200px;
-        border: 1px solid black;
-    }
     .picture{
         width: 100%;
         height: 100%;
-
+        
         position: relative;
     }
     .pictureText{
@@ -87,6 +78,34 @@ title: Konstantinos Markantonakis
 
     .news{
         margin-top: 1rem;
+        margin-left: 1rem;
+        max-width: 25%;
+        
+        max-height: fit-content;
+    }
+    .posts{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    .newsRecentWorkContainer{
+        max-width: 982px;
+        display: flex;
+        flex-direction: row;
+    }
+    .newsElement{
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    .newsElement > a > img{
+        object-fit: fill;
+        width: 100%;
     }
 
 </style>
@@ -95,11 +114,9 @@ title: Konstantinos Markantonakis
         <img width="982" height="252" src="/assets/images/front-photo.jpg" alt="">
         <div class="pictureText">
             <small>I am a professor of Information Security at the 
-                <a href="http://www.isg.rhul.ac.uk/">Information Security Group</a>at 
-                <a href="http://www.rhul.ac.uk/">Royal Holloway, University of London</a>
-                , the director of the 
-                <a href="https://scc.rhul.ac.uk/">Smart Card and IoT Security Centre</a>
-                , and the director of the Transformative Digital Technologies, Security and Society Catalyst. My main research areas include: trusted execution environments; embedded devices and cyber-physical systems security; smart cards and RFIDs security; avionics and drone security; automotive, payment and transport systems security; mobile phones, near-field communication (NFC) and secure element security; and ambient sensors and Internet-of-Things (IoT) security.
+                <a href="http://www.isg.rhul.ac.uk/">Information Security Group</a> at 
+                <a href="http://www.rhul.ac.uk/">Royal Holloway, University of London</a><span>, </span> the director of the 
+                <a href="https://scc.rhul.ac.uk/">Smart Card and IoT Security Centre</a><span>, </span> and the director of the Transformative Digital Technologies, Security and Society Catalyst. My main research areas include: trusted execution environments; embedded devices and cyber-physical systems security; smart cards and RFIDs security; avionics and drone security; automotive, payment and transport systems security; mobile phones, near-field communication (NFC) and secure element security; and ambient sensors and Internet-of-Things (IoT) security.
             </small>
         </div>
     </div>
@@ -145,145 +162,172 @@ title: Konstantinos Markantonakis
                 console.log("nom")
                 accordionElement.classList.add('highlightGold')
             })
-            
-
         })
 
     </script>
 
-    <div class="news">
-        <h4 class="newsTitle">News</h4>
-        <div class="posts">
-            <div class="newsElement"">
-                <h1>News 1</h1>
-            </div>  
-            <div class="newsElement"">
-                <h1>News 2</h1>
-            </div>  
-        </div>
-    </div>
+    <div class="newsRecentWorkContainer">
 
-    <div class="recentWork">
+        <div class="recentWork" id="recentWork">
+            
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <h3>Recent work</h3>
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link active" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Recent Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#presentations" role="tab" aria-controls="contact" aria-selected="false">Presentations</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="profile" aria-selected="false">Books</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#consulting" role="tab" aria-controls="contact" aria-selected="false">Consulting</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
+                        {% assign publications = site.data.publications %}
+                        {% for i in (0..9) %}
+                            <p>
+                                <span>[{{ publications.size | minus: i }}]</span>
+                                {% for author in publications[i].authors %}
+                                    {% if author.link %}
+                                        <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
+                                    {% else %}
+                                        <span>{{author.name}},</span>
+                                    {% endif %}
+                                {% endfor %}
         
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <h3>Recent work</h3>
-            <li class="nav-item ml-auto">
-              <a class="nav-link" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Recent Publications</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#presentations" role="tab" aria-controls="contact" aria-selected="false">Presentations</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="profile" aria-selected="false">Books</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#consulting" role="tab" aria-controls="contact" aria-selected="false">Consulting</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
-                {% assign publications = site.data.publications %}
-                {% for i in (0..9) %}
-                    <p>
-                        <span>[{{ publications.size | minus: i }}]</span>
-                        {% for author in publications[i].authors %}
-                            {% if author.link %}
-                                <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
-                            {% else %}
-                                <span>{{author.name}}</span>
-                            {% endif %}
-                            <span>,</span>
+                                <span>{{publications[i].publishDate}},</span>
+                                <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
+                            </p>
+                        {%endfor%}
+                        
+                    </div>
+                    <div class="tab-pane" id="presentations" role="tabpanel">
+                        
+                        <br>
+                        <h3>8a. Invited keynote to a major international conference</h3>
+                        <br>
+                        <p><b>Delivered</b></p>
+                        <ul>
+                            <li>2019, Edinburgh, Keynote talk, Big Data in Cyber Security, “From Big Computers and Small Data to Small Computers and Big Data”, June 2019</li>
+                            <li>2018, Dubai, Keynote Talk, IEEE International Conference on Signal Processing and Information Security 2018, “Secure Application Execution on IoT Devices – Lessons Learned”</li>
+                            <li>2017, Bucharest, Romania, “Ambient Sensing Based Relay Attack Detection in Smartphone Contactless Transactions”, International Conference on Security for Information Technology and Communications (SECITC) 2017.</li>
+                            <li>2015, Bucharest, Romania, Keynote Talk, 8th International Conference on Security for Information Technology and Communications, SECITC 2015, "Secure and Trusted Application Execution on Embedded Devices"</li>
+                            <li>2012, Nijmegen, The Netherlands, Keynote Talk, The 8th Workshop on RFID Security and Privacy, “Interplay of Business Objectives and Academic Research – Holders of NFC Mobile Service Destiny”</li>
+                            <li>2012, London, UK, Keynote Talk, The 7th International Conference for Internet Technology and Secured Transactions (ICITST-2012) , Smart cards, Secure Elements and NFC Security – The Status Quo”</li>
+                            <li>2012, Hangzhou, China, Keynote Talk, 8th International Conference on Information Security Practice and Experience (ISPEC 2012), “Are smart cards the weakest link? Is `practical information security research’ still significant?”</li>
+                        </ul>
+        
+                        <br>
+                        <h3>8b. An invited symposium/workshop/summer school presentation</h3>
+                        <ul>
+                            <li>2018, Abu Dhabi, Keynote Talk, UAE Cyber-Security Symposium 2018, “Secure and Trusted Application Execution”, Khalifa University.</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytilene, Greece, July 2018</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, July 2017</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Leuven, Belgium, July 2016</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2015</li>
+                            <li>“Secure Application Execution on Cyber Physical Devices”, Summer School on “Design and security of cryptographic algorithms and devices for real-world applications”, Šibenik - Croatia 01 June - 06 June 2014</li>
+                            <li>“Embedded System Security Lesson Learned", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2014</li>
+                            <li>“Smart Cards: State-of-the-Art to Future Directions”, Invited Paper, IEEE International Symposium on Signal Processing and Information Technology, December 12-15, 2013 - Athens, Greece.</li>
+                            <li>"Cyber Physical Systems", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2013.</li>
+                            <li>“Smart card Security”, ICareNet 2013, 3rd of December 2012, Network of Excellence - Winter School, Imperial College, London.</li>
+                            <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2012</li>
+                            <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, August 2011</li>
+                            <li>"Hardware Token Security", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2010</li>
+                            <li>"Smart card Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2009</li>
+                        </ul>
+        
+                        <br>
+                        <h3>8c. An invited presentation to another academic department (UK or international)</h3>
+                        <ul>
+                            <li>2019, Khalifa University (UAE), “Embedded system security, bridging theory and practice. The Smart Card and IoT Security Centre (SCC) perspective.”, October 2019</li>
+                            <li>2018, Abu Dhabi, Invited Talk, Department of Electrical Engineering, “Secure and Trusted Application Execution on Embedded Devices”, Khalifa University.</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 18 January,   2017</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 1st December   2015</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th January  2015</li>
+                            <li>“Embedded Systems Security”, Invited Day Course, KTH, Stockholm, Sweden, April 2015.</li>
+                            <li>“Multi-Application Smart card Operating Systems”, Invited Lecture in the BSc Programme in Computer Science, University of Bordeux and University or Limoges, February and March 2015</li>
+                            <li>“Embedded System Security”, Khalifa University, April 2014.</li>
+                            <li>“Multi-application Smart Embedded Devices”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th November 2013</li>
+                            <li>University of Athens, MSc in Computer Science, Invited talk on “Embedded System Security”, April 2013.</li>
+                            <li>"Smart card Security Theory and Practice”, PRActical aspeCts on SEcurity (PRACSE 09), organised by the Athens Institute of Technology (AIT), June 2009.</li>
+                            <li>“From Smart card to Smart card system security”, PRActical aspeCts on SEcurity (PRACSE’08), organised by the Athens Institute of Technology (AIT), May 2008.</li>
+                            <li>“Smart card Security”, Institute of Computer Science (ICS) Foundation for Research and Technology – Hellas (FORTH), Heraklion, Greece, February 2008.</li>
+                        </ul>
+        
+                    </div>
+                    <div class="tab-pane" id="books" role="tabpanel">
+                        {% for book in site.data.books %}
+                            <div class="book">
+                                <img src="{{book.image}}" alt="{{book.title}}" class="bookImage">
+
+                                <div>
+                                    {% if book.link %}
+                                        <b class="bookTitle">
+                                            <a href="{{ book.link }}">{{book.title}}</a></b>
+                                    {% else %}
+                                        <b class="bookTitle">{{book.title}}</b>
+                                    {% endif %}
+                                    <p class="bookAuthors">{{book.authors}}</p>
+                                    <p class="bookText">{{book.text}}</p>
+                                </div>
+                            </div>
                         {% endfor %}
+                    </div>
+                    <div class="tab-pane" id="consulting" role="tabpanel">
+                        <br>
+                        <h3>Areas of Expertise</h3>
+                        <p>I initially got involved in Information Security consulting projects while pursuing my PhD in Information Security at Royal Holloway. Since then, I have worked on a number of Information Security and Smart Card related projects with numerous high profile clients, and I continue to provide consultancy for a variety of Information Security and Smart Card related areas: </p>
+                        <ul>
+                            <li>Smart Card physical security analysis</li>
+                            <li>Multi-application Smart Card migration program planning</li>
+                            <li>Project management for financial institutions and transport operators</li>
+                            <li>Business case development for chip migration programs</li>
+                            <li>Smart Card application (Java card, SIM card, Multos) security review, design and development</li>
+                            <li>Smart Card security evaluations (Common Criteria), Security Target and Protection Profile Development</li>
+                            <li>Risk analysis on Smart Card technology, protocols and systems</li>
+                            <li>Smart Card security protocol design and review</li>
+                            <li>Security of mobile phone platforms and secure elements</li>
+                            <li>Contactless Smart Card/RFID security and Mifare card technology</li>
+                        </ul>
+                        <br>
+                        <h3>Selected Projects</h3>
+                        <ul>
+                            <li>I was a part of the team, along with colleagues from the Information Security Group’s Smart Card Centre, which performed a counter expertise analysis of a report into the Dutch OV-Chipkaart transport system in 2008. This was in response to some recently published attacks on Mifare Classic smart cards. For more information please follow these links: <a href="https://web.archive.org/web/20191025082324/http:/www.isg.rhul.ac.uk/node/274">ISG_Dutch</a> and <a href="https://web.archive.org/web/20191025082324/http:/www.scc.rhul.ac.uk/public/OV Task Explanatory Note.pdf">SCC_Dutch</a>. This was a high profile piece of work, reported extensively on the internet (see further details <a href="https://web.archive.org/web/20191025082324/http:/www.thetechherald.com/article.php/200816/701">here</a>).</li>
+                            <li>Since then, our team got involved in further work relating to Mifare and chip migration issues, and planning for the Dutch transport system.</li>
+                            <li>I was involved in preparing an evaluation paper for different options in which security controllers can exist in mobile devices. The document was also presented as an ETSI internal document and an early version can be found <a href="https://web.archive.org/web/20191025082324/http:/www.crisptelecom.com/files/simuc.pdf">here</a>.</li>
+                            <li>I was also involved in the preparation and delivery of a smart card security training course for the Information Security department of a major financial institution.</li>
+                            <li>Security analysis of public key cryptography in Smart card devices and tools with restricted processing resources.</li>
+                            <li>Security analysis of a smart card system for the provision of wireless telecommunications services.</li>
+                        </ul>
+        
+                    </div>
+                  </div>
+        </div>
 
-                        <span>{{publications[i].publishDate}}</span>
-                        <span>,</span>
-                        <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
-                    </p>
-
-                {%endfor%}
-                
+        <div class="news">
+            <div class="posts">
+                <div class="newsElement"">
+                    <a href="https://scc.rhul.ac.uk/">
+                        <img src="/assets/images/SCC-logo.png" alt="">
+                    </a>
+                </div>  
+                <div class="newsElement"">
+                    <a href="https://www.royalholloway.ac.uk/">
+                        <img src="/assets/images/royalHolloway.jpg" alt="">
+                    </a>
+                </div> 
+                <div class="newsElement"">
+                    <a href="/news">
+                        <h4>Latest News!</h4>
+                    </a>
+                </div>  
             </div>
-            <div class="tab-pane" id="presentations" role="tabpanel">
-                <h3>8a. Invited keynote to a major international conference</h3>
-                <p>Delivered</p>
-                <ul>
-                    <li>2019, Edinburgh, Keynote talk, Big Data in Cyber Security, “From Big Computers and Small Data to Small Computers and Big Data”, June 2019</li>
-                    <li>2018, Dubai, Keynote Talk, IEEE International Conference on Signal Processing and Information Security 2018, “Secure Application Execution on IoT Devices – Lessons Learned”</li>
-                    <li>2017, Bucharest, Romania, “Ambient Sensing Based Relay Attack Detection in Smartphone Contactless Transactions”, International Conference on Security for Information Technology and Communications (SECITC) 2017.</li>
-                    <li>2015, Bucharest, Romania, Keynote Talk, 8th International Conference on Security for Information Technology and Communications, SECITC 2015, "Secure and Trusted Application Execution on Embedded Devices"</li>
-                    <li>2012, Nijmegen, The Netherlands, Keynote Talk, The 8th Workshop on RFID Security and Privacy, “Interplay of Business Objectives and Academic Research – Holders of NFC Mobile Service Destiny”</li>
-                    <li>2012, London, UK, Keynote Talk, The 7th International Conference for Internet Technology and Secured Transactions (ICITST-2012) , Smart cards, Secure Elements and NFC Security – The Status Quo”</li>
-                    <li>2012, Hangzhou, China, Keynote Talk, 8th International Conference on Information Security Practice and Experience (ISPEC 2012), “Are smart cards the weakest link? Is `practical information security research’ still significant?”</li>
-                </ul>
-
-                <h3>8b. An invited symposium/workshop/summer school presentation</h3>
-
-                <ul>
-                    <li>2018, Abu Dhabi, Keynote Talk, UAE Cyber-Security Symposium 2018, “Secure and Trusted Application Execution”, Khalifa University.</li>
-                    <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytilene, Greece, July 2018</li>
-                    <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, July 2017</li>
-                    <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Leuven, Belgium, July 2016</li>
-                    <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2015</li>
-                    <li>“Secure Application Execution on Cyber Physical Devices”, Summer School on “Design and security of cryptographic algorithms and devices for real-world applications”, Šibenik - Croatia 01 June - 06 June 2014</li>
-                    <li>“Embedded System Security Lesson Learned", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2014</li>
-                    <li>“Smart Cards: State-of-the-Art to Future Directions”, Invited Paper, IEEE International Symposium on Signal Processing and Information Technology, December 12-15, 2013 - Athens, Greece.</li>
-                    <li>"Cyber Physical Systems", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2013.</li>
-                    <li>“Smart card Security”, ICareNet 2013, 3rd of December 2012, Network of Excellence - Winter School, Imperial College, London.</li>
-                    <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2012</li>
-                    <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, August 2011</li>
-                    <li>"Hardware Token Security", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2010</li>
-                    <li>"Smart card Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2009</li>
-                </ul>
-
-                <h3>8c. An invited presentation to another academic department (UK or international)</h3>
-
-                <ul>
-                    <li>2019, Khalifa University (UAE), “Embedded system security, bridging theory and practice. The Smart Card and IoT Security Centre (SCC) perspective.”, October 2019</li>
-                    <li>2018, Abu Dhabi, Invited Talk, Department of Electrical Engineering, “Secure and Trusted Application Execution on Embedded Devices”, Khalifa University.</li>
-                    <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 18 January,   2017</li>
-                    <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 1st December   2015</li>
-                    <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th January  2015</li>
-                    <li>“Embedded Systems Security”, Invited Day Course, KTH, Stockholm, Sweden, April 2015.</li>
-                    <li>“Multi-Application Smart card Operating Systems”, Invited Lecture in the BSc Programme in Computer Science, University of Bordeux and University or Limoges, February and March 2015</li>
-                    <li>“Embedded System Security”, Khalifa University, April 2014.</li>
-                    <li>“Multi-application Smart Embedded Devices”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th November 2013</li>
-                    <li>University of Athens, MSc in Computer Science, Invited talk on “Embedded System Security”, April 2013.</li>
-                    <li>"Smart card Security Theory and Practice”, PRActical aspeCts on SEcurity (PRACSE 09), organised by the Athens Institute of Technology (AIT), June 2009.</li>
-                    <li>“From Smart card to Smart card system security”, PRActical aspeCts on SEcurity (PRACSE’08), organised by the Athens Institute of Technology (AIT), May 2008.</li>
-                    <li>“Smart card Security”, Institute of Computer Science (ICS) Foundation for Research and Technology – Hellas (FORTH), Heraklion, Greece, February 2008.</li>
-                </ul>
-
-            </div>
-            <div class="tab-pane" id="books" role="tabpanel">
-                books
-            </div>
-            <div class="tab-pane" id="consulting" role="tabpanel">
-                <h3>Areas of Expertise</h3>
-                <p>I initially got involved in Information Security consulting projects while pursuing my PhD in Information Security at Royal Holloway. Since then, I have worked on a number of Information Security and Smart Card related projects with numerous high profile clients, and I continue to provide consultancy for a variety of Information Security and Smart Card related areas: </p>
-                <ul>
-                    <li>Smart Card physical security analysis</li>
-                    <li>Multi-application Smart Card migration program planning</li>
-                    <li>Project management for financial institutions and transport operators</li>
-                    <li>Business case development for chip migration programs</li>
-                    <li>Smart Card application (Java card, SIM card, Multos) security review, design and development</li>
-                    <li>Smart Card security evaluations (Common Criteria), Security Target and Protection Profile Development</li>
-                    <li>Risk analysis on Smart Card technology, protocols and systems</li>
-                    <li>Smart Card security protocol design and review</li>
-                    <li>Security of mobile phone platforms and secure elements</li>
-                    <li>Contactless Smart Card/RFID security and Mifare card technology</li>
-                </ul>
-                <h3>Selected Projects</h3>
-                <ul>
-                    <li>I was a part of the team, along with colleagues from the Information Security Group’s Smart Card Centre, which performed a counter expertise analysis of a report into the Dutch OV-Chipkaart transport system in 2008. This was in response to some recently published attacks on Mifare Classic smart cards. For more information please follow these links: <a href="https://web.archive.org/web/20191025082324/http:/www.isg.rhul.ac.uk/node/274">ISG_Dutch</a> and <a href="https://web.archive.org/web/20191025082324/http:/www.scc.rhul.ac.uk/public/OV Task Explanatory Note.pdf">SCC_Dutch</a>. This was a high profile piece of work, reported extensively on the internet (see further details <a href="https://web.archive.org/web/20191025082324/http:/www.thetechherald.com/article.php/200816/701">here</a>).</li>
-                    <li>Since then, our team got involved in further work relating to Mifare and chip migration issues, and planning for the Dutch transport system.</li>
-                    <li>I was involved in preparing an evaluation paper for different options in which security controllers can exist in mobile devices. The document was also presented as an ETSI internal document and an early version can be found <a href="https://web.archive.org/web/20191025082324/http:/www.crisptelecom.com/files/simuc.pdf">here</a>.</li>
-                    <li>I was also involved in the preparation and delivery of a smart card security training course for the Information Security department of a major financial institution.</li>
-                    <li>Security analysis of public key cryptography in Smart card devices and tools with restricted processing resources.</li>
-                    <li>Security analysis of a smart card system for the provision of wireless telecommunications services.</li>
-                </ul>
-
-            </div>
-          </div>
+        </div>
+        
     </div>
 
 

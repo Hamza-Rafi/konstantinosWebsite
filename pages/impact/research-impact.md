@@ -6,15 +6,13 @@ layout: base
 # Research impact
 ---
 
-- **Student Projects:**
+### Student Projects:
 
 As a further esteem indicator, my MSc students' projects have won, on multiple occasions, best [MSc project awards and the RHUL David Lindsay Prizes](https://intranet.royalholloway.ac.uk/isg/informationfornewreturningstudents/mscproject/thesisprizes.aspx); some of these have also resulted in conference publications, with best paper and session awards.
 
 <mark>HYPERLINK ABOVE GOES NOWHERE</mark>
 
-- **Vulnerability Identification**
-
-<mark> THIS IS EMPTY </mark>
+### Vulnerability Identification
 
 - **Android OS Vulnerability, 2021**
 Along with Dr Carlton Shepherd, we discovered a vulnerability in the Android OS. It was responsibly disclosed to the affected organisation and it was formally acknowledged. The issue affects all known Android versions, across all manufacturers. The findings were also disseminated to our Horizon 2020 (EXFILES) project partners, and an academic paper on this topic is currently under review.

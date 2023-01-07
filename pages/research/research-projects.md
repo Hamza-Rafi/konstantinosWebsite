@@ -19,6 +19,7 @@ For more information about the above projects please visit the [Research Projec
 ### Postdoc/Research Positions
 
 I currently have no open postdoc/research positions. Please do visit the news page for further announcements.
+<br /><br />
 
 ### Visiting Research Positions
 

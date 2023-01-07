@@ -4,7 +4,6 @@ const fs = require('fs')
 
 const url = "https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis/publications/?page=";
 const paperSelector = "div.result-container > div > h3 > a";
-const citSelector = "div.tab-container > div#cite-harvard";
 
 async function GetPagePapers(number) {
   const page = await axios.get(url + number);

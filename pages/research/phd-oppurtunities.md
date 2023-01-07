@@ -29,20 +29,25 @@ I am constantly seeking strong candidates with a background in computer science,
 -   Gait Based Authentication for Mobile Devices
 -   Financial Systems, Payment Cards, Blockchain Technologies
 -   Cyber Physical Systems for Security Critical Services
+<br /><br />
 
-**PhD Funding**
+## PhD Funding
+<br />
 
 [**Royal Holloway Centre for Doctoral Training in Cyber Security**](http://www.rhul.ac.uk/isg/cybersecuritycdt/home.aspx)
 
 Funding for PhD students is available through the [Royal Holloway Centre for Doctoral Training in Cyber Security](http://www.rhul.ac.uk/isg/cybersecuritycdt/home.aspx). For a proposed PhD topic (feel free to suggest alternatives) please follow this link: <http://www.findaphd.com/search/projectDetails.aspx?PJID=44472>. The ideal candidate should have proficient practical skills (such as experience in software development), and good communication and team working skills. A strong interest in information security problems that aim to bridge theory and practice in embedded systems, IoTs, trusted execution environments, mobile devices, smart cards and RFIDs is desirable.
+<br /><br />
 
 **SCC Funding**
 
 Additional funding maybe available through the SCC sponsors. If you have a 2.1 or a first-class BSc degree and/or a MSc with distinction in computer science, information security or electronic/computer engineering, and you are interested in one of the above research topics, please do get in touch.
+<br /><br />
 
 **Self-Funded**
 
 I will be happy to consider self-funded/sponsored PhD opportunities.
+<br /><br />
 
 **Internships**
 

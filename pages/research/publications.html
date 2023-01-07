@@ -9,16 +9,35 @@ layout: base
 <h3 id="publication-outputs">PUBLICATION OUTPUTS</h3>
 <p>My Google Scholar profile can be obtained from <a href="https://scholar.google.co.uk/citations?user=NygekFcAAAAJ&amp;hl=en.">here</a>.</p>
 <ul>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-BOOK">Book</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-CONFERENCE">Conference contribution</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-CHAPTER">Chapter</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-ARTICLE">Article</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-PAPER">Paper</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-OTHER">Other contribution</a>s</li>
-<li><a href="https://km.isg.rhul.ac.uk/research/publications/#section-SPECIAL_ISSUE">Special issue</a>s</li>
+<li><a href="/research/publications/#section-BOOK">Books</a></li>
+<li><a href="/research/publications/#section-CONFERENCE">Conference contributions</a></li>
+<li><a href="/research/publications/#section-CHAPTER">Chapters</a></li>
+<li><a href="/research/publications/#section-ARTICLE">Articles</a></li>
+<li><a href="/research/publications/#section-PAPER">Papers</a></li>
+<li><a href="/research/publications/#section-OTHER">Other contributions</a></li>
+<li><a href="/research/publications/#section-SPECIAL_ISSUE">Special issues</a></li>
 </ul>
 
+<h3>Books</h3>
 
+{% for book in site.data.books %}
+<div class="book">
+    <img src="{{book.image}}" alt="{{book.title}}" class="bookImage">
+
+    <div>
+        {% if book.link %}
+            <b class="bookTitle">
+                <a href="{{ book.link }}">{{book.title}}</a></b>
+        {% else %}
+            <b class="bookTitle">{{book.title}}</b>
+        {% endif %}
+        <p class="bookAuthors">{{book.authors}}</p>
+        <p class="bookText">{{book.text}}</p>
+    </div>
+</div>
+{% endfor %}
+
+<br />
 <h3>Publications</h3>
 
 {% assign publications = site.data.publications %}

@@ -35,8 +35,6 @@ body{
     padding: 1rem;
 
     background-color: #eaeaea;
-
-
 }
 .content{
     margin-top: 0px;
@@ -72,3 +70,15 @@ body{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown-custom:hover .dropbtn-custom {background-color: rgba(255 , 255, 255, 0.25);}
+
+/* Books */
+.book{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.bookImage{
+    margin-right: 1rem;
+    object-fit: contain;
+}

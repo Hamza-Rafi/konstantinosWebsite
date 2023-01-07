@@ -2,8 +2,8 @@
 permalink: /impact/patents
 layout: base
 ---
-
 # Patents
+<br />
 
 ### 2021
 
