@@ -3,25 +3,31 @@ permalink: /research/publications
 layout: base
 ---
 
+<style>
+    .hashLink{
+        scroll-margin-top: 5rem;
+    }
+</style>
+
 <h1>All Publications</h1> 
 <hr>
 
 <h3 id="publication-outputs">PUBLICATION OUTPUTS</h3>
 <p>My Google Scholar profile can be obtained from <a href="https://scholar.google.co.uk/citations?user=NygekFcAAAAJ&amp;hl=en.">here</a>.</p>
 <ul>
-<li><a href="/research/publications/#section-BOOK">Books</a></li>
-<li><a href="/research/publications/#section-CONFERENCE">Conference contributions</a></li>
-<li><a href="/research/publications/#section-CHAPTER">Chapters</a></li>
-<li><a href="/research/publications/#section-ARTICLE">Articles</a></li>
-<li><a href="/research/publications/#section-PAPER">Papers</a></li>
-<li><a href="/research/publications/#section-OTHER">Other contributions</a></li>
-<li><a href="/research/publications/#section-SPECIAL_ISSUE">Special issues</a></li>
+    <li><a href="/research/publications/#BOOKS">Books</a></li>
+    <li><a href="/research/publications/#CONFERENCE-CONTRIBUTIONS">Conference contributions</a></li>
+    <li><a href="/research/publications/#CHAPTERS">Chapters</a></li>
+    <li><a href="/research/publications/#ARTICLES">Articles</a></li>
+    <li><a href="/research/publications/#PAPERS">Papers</a></li>
+    <li><a href="/research/publications/#OTHER-CONTRIBUTIONS">Other contributions</a></li>
+    <li><a href="/research/publications/#SPECIAL_ISSUES">Special issues</a></li>
 </ul>
 
-<h3>Books</h3>
+<h3 id="BOOK">Books</h3>
 
 {% for book in site.data.books %}
-<div class="book">
+<div>
     <img src="{{book.image}}" alt="{{book.title}}" class="bookImage">
 
     <div>
@@ -38,27 +44,33 @@ layout: base
 {% endfor %}
 
 <br />
-<h3>Publications</h3>
+{% for item in site.data.publications %}
 
-{% assign publications = site.data.publications %}
-{% assign loopUntil = publications.size | minus: 1 %}
-
-<p>Total number of publications: {{publications.size}}</p>
-{% for i in (0..loopUntil) %}
-    <p>
-        <span>[{{ publications.size | minus: i }}]</span>
-        {% for author in publications[i].authors %}
-            {% if author.link %}
-                <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
-            {% else %}
-                <span>{{author.name}}</span>
-            {% endif %}
-            <span>,</span>
+    <h3 id="{{ item[0] | upcase }}" class="hashLink">
+        {% assign words = item[0] | split: "-" %}
+        {% for word in words %}
+            {{word | capitalize}}
         {% endfor %}
+    </h3>
 
-        <span>{{publications[i].publishDate}}</span>
-        <span>,</span>
-        <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
-    </p>
+    <p>Total number of {{item[0] | replace: "-", " "}}: {{ item[1].size }}</p>
 
-{%endfor%}
+    {% for entry in item[1] %}
+        <p>
+            <span>[{{ item[1].size | minus: forloop.index | plus: 1 }}]</span>
+            {% for author in entry.authors %}
+                {% if author.link %}
+                    <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
+                {% else %}
+                    <span>{{author.name}}</span>
+                {% endif %}
+                <span>,</span>
+            {% endfor %}
+
+            <span>{{entry.publishDate}}</span>
+            <span>,</span>
+            <a style="display: inline;" href="{{entry.titleLink}}">{{ entry.title }}</a>
+        </p>
+    {% endfor %}
+    <br />
+{% endfor %}

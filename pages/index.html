@@ -117,6 +117,7 @@ title: Konstantinos Markantonakis
                 <a href="http://www.isg.rhul.ac.uk/">Information Security Group</a> at 
                 <a href="http://www.rhul.ac.uk/">Royal Holloway, University of London</a><span>, </span> the director of the 
                 <a href="https://scc.rhul.ac.uk/">Smart Card and IoT Security Centre</a><span>, </span> and the director of the Transformative Digital Technologies, Security and Society Catalyst. My main research areas include: trusted execution environments; embedded devices and cyber-physical systems security; smart cards and RFIDs security; avionics and drone security; automotive, payment and transport systems security; mobile phones, near-field communication (NFC) and secure element security; and ambient sensors and Internet-of-Things (IoT) security.
+                <a style="background-color: rgb(219, 112, 2); color:white;border-radius:5px;padding:0.15rem;" class="" href="/short-bio">More</a>
             </small>
         </div>
     </div>
@@ -187,11 +188,11 @@ title: Konstantinos Markantonakis
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
-                        {% assign publications = site.data.publications %}
+                        {% assign papers = site.data.publications.papers %}
                         {% for i in (0..9) %}
                             <p>
-                                <span>[{{ publications.size | minus: i }}]</span>
-                                {% for author in publications[i].authors %}
+                                <span>[{{ papers.size | minus: i }}]</span>
+                                {% for author in papers[i].authors %}
                                     {% if author.link %}
                                         <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
                                     {% else %}
@@ -199,8 +200,8 @@ title: Konstantinos Markantonakis
                                     {% endif %}
                                 {% endfor %}
         
-                                <span>{{publications[i].publishDate}},</span>
-                                <a style="display: inline;" href="{{publications[i].titleLink}}">{{ publications[i].title }}</a>
+                                <span>{{papers[i].publishDate}},</span>
+                                <a style="display: inline;" href="{{papers[i].titleLink}}">{{ papers[i].title }}</a>
                             </p>
                         {%endfor%}
                         
@@ -330,7 +331,4 @@ title: Konstantinos Markantonakis
         
     </div>
 
-
-</div>
-
-    
+</div>    
