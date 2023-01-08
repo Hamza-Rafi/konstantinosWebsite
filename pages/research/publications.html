@@ -21,7 +21,7 @@ layout: base
     <li><a href="/research/publications/#ARTICLES">Articles</a></li>
     <li><a href="/research/publications/#PAPERS">Papers</a></li>
     <li><a href="/research/publications/#OTHER-CONTRIBUTIONS">Other contributions</a></li>
-    <li><a href="/research/publications/#SPECIAL_ISSUES">Special issues</a></li>
+    <li><a href="/research/publications/#SPECIAL-ISSUES">Special issues</a></li>
 </ul>
 
 <h3 id="BOOK">Books</h3>
@@ -60,15 +60,12 @@ layout: base
             <span>[{{ item[1].size | minus: forloop.index | plus: 1 }}]</span>
             {% for author in entry.authors %}
                 {% if author.link %}
-                    <a style="display: inline;" href="{{author.link}}">{{author.name}}</a>
+                    <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
                 {% else %}
-                    <span>{{author.name}}</span>
+                    <span>{{author.name}},</span>
                 {% endif %}
-                <span>,</span>
             {% endfor %}
-
-            <span>{{entry.publishDate}}</span>
-            <span>,</span>
+            <span>{{entry.publishDate}},</span>
             <a style="display: inline;" href="{{entry.titleLink}}">{{ entry.title }}</a>
         </p>
     {% endfor %}
