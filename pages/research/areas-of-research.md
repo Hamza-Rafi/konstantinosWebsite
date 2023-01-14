@@ -68,37 +68,37 @@ Elemental to this research thread [CP106, CP123], we consider an exceptionally p
 Mobile devices have developed in to mainstream and powerful computing devices. We are examining the underlying security mechanisms of mobile devices to enable secure application installation, permission enforcement, prevention of privilege escalation, and provisioning of forensic tools.
 <br /><br />
 
-[**A novel approach to utilising Side-Channel Leakage**](http://km.isg.rhul.ac.uk/research-interests/active-research/new-usage-of-side-channel-leakage)
+**A novel approach to utilising Side-Channel Leakage**
 
 Side-channel leakages have hitherto been used to break into systems and algorithms. However, we propose a state-of-the-art approach to utilising side-channel leakages in embedded devices, using them to fingerprint a platform and to verify secure application execution.
 <br /><br />
 
-[**Security Protocol Design**](http://km.isg.rhul.ac.uk/research-interests/active-research/security-protocol-design)
+**Security Protocol Design**
 
 Currently, there are a number of secure channel protocols that do not take into account the specific characteristics (e.g. processing overheads, communication buffers, etc.) of the underlying technology utilised by different devices. We have proposed various secure channel protocols that incorporate all these often neglected factors in to their design.
 <br /><br />
 
-[**Smart Energy Trading**](http://km.isg.rhul.ac.uk/research-interests/research/near-field-communication-security)
+**Smart Energy Trading**
 
 In our research into smart energy trading, we analyse the various energy market models and propose new directions for a decentralised P2P marketplace for trading energy, which addresses the problems of developing secure and privacy-aware environments through the use of block chains.
 <br /><br />
 
-[**Transport System Security**](http://km.isg.rhul.ac.uk/research-interests/research/transport)
+**Transport System Security**
 
 We have been investigating the security requirements of NFC handsets in the transport industry, along with their perceived security advantages and disadvantages. This thread of work also involves examining the use of NFC handsets as ticketing devices, taking into account tokenization, relay attacks, and performance and security requirements.
 <br /><br />
 
-[**Block Chain Technologies**](http://km.isg.rhul.ac.uk/research-interests/active-research/verification-of-security-protocols)
+**Block Chain Technologies**
 
 We have been examining the effective and resilient use of block chain technologies in decentralised transport and ticketing, energy market, open governance, automotive and drone mission accomplishment.
 <br /><br />
 
-[**User Centric Devices**](http://km.isg.rhul.ac.uk/research-interests/research/user-centric-devices)
+**User Centric Devices**
 
 Further to our research into user centric devices, we are proposing user centric models of ownership for various personal devices, including smart cards, Trusted Execution Environments and mobile phones. The nature of these operational environments creates specific research questions in terms of how the applications will be downloaded, installed, decommissioned and attested.
 <br /><br />
 
-[**Resilient Computing**](http://km.isg.rhul.ac.uk/research-interests/research/interoperability-of-content-protection)
+**Resilient Computing**
 
 I am interested in the provisioning of embedded operating systems and application execution mechanisms that take advantage of hardware and software enhancements to avoid side-channel attacks.
 <br /><br />

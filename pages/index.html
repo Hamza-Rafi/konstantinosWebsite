@@ -32,6 +32,10 @@ title: Konstantinos Markantonakis
         text-align: justify;
         padding-left: 1rem;
         padding-right: 1rem;
+        line-height: 120%;
+    }
+    .accordionContent > p{
+        background-color: red;
     }
     .leftAccordionElements{
         padding-right: 1rem;
@@ -152,15 +156,21 @@ title: Konstantinos Markantonakis
         
         // set first one active by default
         accordionElements[0].classList.add('highlightGold')
+        //p = document.createElement('p')
+        //p.setAttribute('id', 'accordionContentParagraph')
+        //p.textContent = accordionElements[0].dataset.description
+        //document.getElementById('accordionContent').appendChild(p)
         document.getElementById('accordionContent').textContent = accordionElements[0].dataset.description
         
         accordionElements.forEach(accordionElement => {
             accordionElement.addEventListener('mouseover', () => {
                 let accordionContent = document.getElementById('accordionContent')
                 accordionContent.textContent = accordionElement.dataset.description
+                //p = document.getElementById('accordionContentParagraph')
+                //p.textContent = accordionElement.dataset.description
+                //document.getElementById('accordionContent').appendChild(p)
 
                 accordionElements.forEach(item => {item.classList.remove('highlightGold')})
-                console.log("nom")
                 accordionElement.classList.add('highlightGold')
             })
         })

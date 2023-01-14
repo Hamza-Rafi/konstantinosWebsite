@@ -7,7 +7,7 @@ layout: base
 ---
 ### Royal Holloway Contact
 
-**Email:** K.Markantonakis@rhul.ac.uk
+**Email:** K.Markantonakis[AT]rhul.ac.uk
 
 **Phone:** +44 1784 414409
 

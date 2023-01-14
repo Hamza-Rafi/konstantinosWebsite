@@ -58,32 +58,7 @@
         "name": "IMPACT",
         "link": "/impact",
         "isDropdown": true,
-        "dropdownItems":  [
-            {
-                "name": "COMMERCIALISATION",
-                "link": "/impact/commercialisation",
-                "isDropdown": false,
-                "dropdownItems":  []
-            },
-            {
-                "name": "RESEARCH IMPACT",
-                "link": "/impact/research-impact",
-                "isDropdown": false,
-                "dropdownItems":  []
-            },
-            {
-                "name": "POLICY IMPACT",
-                "link": "/impact/policy-impact",
-                "isDropdown": false,
-                "dropdownItems":  []
-            },
-            {
-                "name": "PATENTS",
-                "link": "/impact/patents",
-                "isDropdown": false,
-                "dropdownItems":  []
-            }
-        ]
+        "dropdownItems":  []
     },
     {
         "name": "NEWS",

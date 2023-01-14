@@ -35,8 +35,9 @@ I am constantly seeking strong candidates with a background in computer science,
 <br />
 
 [**Royal Holloway Centre for Doctoral Training in Cyber Security**](http://www.rhul.ac.uk/isg/cybersecuritycdt/home.aspx)
+https://www.royalholloway.ac.uk/research-and-teaching/departments-and-schools/information-security/studying-here/centre-for-doctoral-training-in-cyber-security-for-the-everyday/
 
-Funding for PhD students is available through the [Royal Holloway Centre for Doctoral Training in Cyber Security](http://www.rhul.ac.uk/isg/cybersecuritycdt/home.aspx). For a proposed PhD topic (feel free to suggest alternatives) please follow this link: <http://www.findaphd.com/search/projectDetails.aspx?PJID=44472>. The ideal candidate should have proficient practical skills (such as experience in software development), and good communication and team working skills. A strong interest in information security problems that aim to bridge theory and practice in embedded systems, IoTs, trusted execution environments, mobile devices, smart cards and RFIDs is desirable.
+Funding for PhD students is available through the [Royal Holloway Centre for Doctoral Training in Cyber Security](http://www.rhul.ac.uk/isg/cybersecuritycdt/home.aspx)https://www.royalholloway.ac.uk/research-and-teaching/departments-and-schools/information-security/studying-here/centre-for-doctoral-training-in-cyber-security-for-the-everyday/. For a proposed PhD topic (feel free to suggest alternatives) please follow this link: <http://www.findaphd.com/search/projectDetails.aspx?PJID=44472>. The ideal candidate should have proficient practical skills (such as experience in software development), and good communication and team working skills. A strong interest in information security problems that aim to bridge theory and practice in embedded systems, IoTs, trusted execution environments, mobile devices, smart cards and RFIDs is desirable.
 <br /><br />
 
 **SCC Funding**
