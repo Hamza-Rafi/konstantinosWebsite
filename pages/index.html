@@ -195,22 +195,41 @@ title: Konstantinos Markantonakis
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
-                        {% assign papers = site.data.publications %}
+
+                        
+                        {% assign countdown = site.data.publications | size %}
                         {% for i in (0..9) %}
+                            {% assign publication = site.data.publications[i] %}
+
                             <p>
-                                <span>[{{ papers.size | minus: i }}]</span>
-                                {% for author in papers[i].authors %}
+                                <span>[{{countdown}}]</span>
+                                {% assign countdown = countdown | minus: 1 %}
+                        
+                                {% for author in publication.authors %}
                                     {% if author.link %}
                                         <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
                                     {% else %}
                                         <span>{{author.name}},</span>
                                     {% endif %}
                                 {% endfor %}
-        
-                                <span>{{papers[i].publishDate}},</span>
-                                <a style="display: inline;" href="{{papers[i].titleLink}}">{{ papers[i].title }}</a>
+                                <a style="display: inline;" href="{{publication.titleLink}}">"{{ publication.title }}",</a>
+                                <span>{{publication.publishDate}},</span>
+                
+                                {% if publication.journal != '' %}
+                                    <span>{{publication.journal}},</span>
+                                {% endif %}
+                
+                                {% if publication.doi != blank %}
+                                    <span>
+                                        <a href="{{publication.doi.link}}">{{publication.doi.text}}</a>
+                                    </span>
+                                {% endif %}
+                                
+                                {% if publication.links != blank %}
+                                    <span><a href="{{publication.links}}">{{publication.links}}</a></span>
+                                {% endif %}
                             </p>
-                        {%endfor%}
+                        {% endfor %}
                         
                     </div>
                     <div class="tab-pane" id="presentations" role="tabpanel">
@@ -339,7 +358,7 @@ title: Konstantinos Markantonakis
 
                     <div class="newsElement multine-ellipsis">
                         <a href="/news#{{titleId}}">
-                            <h4>{{news.title}}</h4>
+                            <h6>{{news.title}}</h6>
                         </a>
                     </div>
                 {% endfor %}

@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstantinos Markantonakis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+    
+    <nav class="navbar  sticky-top navbar-expand-lg navbar-light navbar-custom-wrapper">
+    <a class="navbar-brand navbar-brand-custom" href="/">KONSTANTINOS MARKANTONAKIS</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+                
+                    <li class="nav-item">
+                        <a href="/short-bio" class="nav-link text-white">SHORT BIO</a>
+                    </li>
+                
+            
+                
+                    <li class="nav-item dropdown-custom">
+                        <a href="/research" class="nav-link text-white dropbtn-custom">RESEARCH</a>
+                        
+                        <div class="dropdown-content-custom">
+                            
+                                <a href="/research/areas-of-research">AREAS OF RESEARCH</a>
+                            
+                                <a href="/research/publications">ALL PUBLICATIONS</a>
+                            
+                                <a href="/research/phd-students">PHD STUDENTS</a>
+                            
+                                <a href="/research/phd-oppurtunities">PHD OPPURTUNITIES</a>
+                            
+                                <a href="/research/research-projects">RESEARCH PROJECTS</a>
+                            
+                                <a href="/research/conferences">CONFERENCES</a>
+                            
+                        </div>
+                    </li>
+                
+            
+                
+                    <li class="nav-item">
+                        <a href="/teaching" class="nav-link text-white">TEACHING</a>
+                    </li>
+                
+            
+                
+                    <li class="nav-item dropdown-custom">
+                        <a href="/impact" class="nav-link text-white dropbtn-custom">IMPACT</a>
+                        
+                        <div class="dropdown-content-custom">
+                            
+                        </div>
+                    </li>
+                
+            
+                
+                    <li class="nav-item">
+                        <a href="/news" class="nav-link text-white">NEWS</a>
+                    </li>
+                
+            
+                
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link text-white">CONTACT</a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+</nav>
+
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+            <div class="col-xs-12">
+                <div class="page-wrapper">
+                    <div class="page-content">
+                        <div class="content">
+                            <style>
+    .accordion{
+        max-width: 982px;
+        margin-top: 1rem;
+    }
+    .accordion>div>div>h5{
+        color: #8DF6E6;
+    }
+    .accordionBody>div{
+        width: 33%;
+        /* border: 1px solid black; */
+    }
+    .accordionBody{
+        display: flex;
+        justify-content: space-around;
+        background-color: #3E4D4E;
+        color: #fff;
+    }
+    .accordionTitle{
+        background-color: #4A4945;
+        color: #fff;
+        border-bottom: 1px solid black;
+        padding: 0.5rem;
+    }
+    .accordionContent{
+        text-align: justify;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 120%;
+    }
+    .accordionContent > p{
+        background-color: red;
+    }
+    .leftAccordionElements{
+        padding-right: 1rem;
+        text-align: right;
+        border-right: 2px solid #E27C1F;
+    }
+    .rightAccordionElements{
+        text-align: left;
+        padding-left: 1rem;
+        border-left: 2px solid #E27C1F;
+    }
+    .accordionElement{
+        margin: 0.25rem;
+    }
+    .accordionElement:hover{
+        cursor: pointer;
+    }
+    .highlightGold{
+        color: #E27C1F;
+    }
+    .recentWork{
+        max-width: 982px;
+        margin-top: 1rem;
+    }
+    .picture{
+        width: 100%;
+        height: 100%;
+        
+        position: relative;
+    }
+    .pictureText{
+        width: 65%;
+        max-height: 75%;
+        position: absolute;
+        
+        padding: 0.5rem;
+
+        top: 50%;
+        right: 1rem;
+        transform: translate(0%, -50%);
+
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .news{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        max-width: 25%;
+        
+        max-height: fit-content;
+    }
+    .posts{
+        border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    .newsRecentWorkContainer{
+        max-width: 982px;
+        display: flex;
+        flex-direction: row;
+    }
+    .newsElement{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    .newsElement > a > img{
+        object-fit: fill;
+        width: 100%;
+    }
+
+</style>
+<div class="grid">
+    <div class="picture">
+        <img width="982" height="252" src="/assets/images/front-photo.jpg" alt="">
+        <div class="pictureText">
+            <small>I am a professor of Information Security at the 
+                <a href="http://www.isg.rhul.ac.uk/">Information Security Group</a> at 
+                <a href="http://www.rhul.ac.uk/">Royal Holloway, University of London</a><span>, </span> the director of the 
+                <a href="https://scc.rhul.ac.uk/">Smart Card and IoT Security Centre</a><span>, </span> and the director of the Transformative Digital Technologies, Security and Society Catalyst. My main research areas include: trusted execution environments; embedded devices and cyber-physical systems security; smart cards and RFIDs security; avionics and drone security; automotive, payment and transport systems security; mobile phones, near-field communication (NFC) and secure element security; and ambient sensors and Internet-of-Things (IoT) security.
+                <a style="background-color: rgb(219, 112, 2); color:white;border-radius:5px;padding:0.15rem;" class="" href="/short-bio">More</a>
+            </small>
+        </div>
+    </div>
+    
+    <div class="accordion">
+        <div class="accordionTitle">
+            <h4>Areas of research</h4>
+        </div>
+        <div class="accordionBody">
+            <div class="leftAccordionElements">
+                <h5>Active research</h5>
+    
+                
+                    <p class="accordionElement" data-element="Internet-of-Things (IoTs)" data-description="I am particularly interested in providing countermeasures for vulnerabilities and attacks on consumer (IoT) and industrial connected-devices. I have supervised a number of projects that examine the security of smart locks, web cams, DVRs, smart watches, and other “smart” devices; this has resulted in identifying some zero day vulnerabilities.">Internet-of-Things (IoTs)</p>
+                
+                    <p class="accordionElement" data-element="Payment System Security" data-description="Amongst my main research interests is the security of payment systems, fair exchange [CP16] and anonymity [CP13] protocols. We have also been conducting research in the field of bitcoins and fair exchange protocols [CP81], and exploring the benefits of block chain technologies for other applications. I also have a keen interest in the field of centralised payment systems [CP89]; this research thread has resulted into numerous research questions [CP95] [CP79], where we practically examine the efficient use of mobile phone sensors for avoiding relay attacks [CP81].">Payment System Security</p>
+                
+                    <p class="accordionElement" data-element="Secure Application Execution" data-description="In this research thread, we are investigating ways that guarantee the secure execution of an application in embedded and cyber-physical devices (e.g. smart cards, mobile phones, payment terminals, IoTs, etc.) that might be subjected to a number of intentional attacks (e.g. side channel attacks) and unintentional faults (cosmic radiation). The main aim of this research thread [CP77, CP87, CP94] is to detect potential attacks, protect runtime data, and provide verified instruction interpretation and control flow verification, in an attempt to recover the underlying platform in a secure state. The practicality of these proposals has been implemented and tested on an FPGA platform, implementing a microprocessor.">Secure Application Execution</p>
+                
+                    <p class="accordionElement" data-element="Trusted Execution Environments" data-description="For the embedded systems and mobile phones research thread [CP113, CP114, CP130], we looked into the different attestation mechanisms [CP37, CP42, CP49, CP61, CP73] that will allow a device to provide the necessary assurance that it operates in a secure and safe mode. This includes preventing attacks by identifying any vulnerabilities or modifications (at the software level) of the underlying platform. This research thread also examines the security provisions of a number of trusted execution environments, such as ARM TrustZone and Intel SGX, in order to provide security enhancements [CCP105, CPP114, CP122, CP130].">Trusted Execution Environments</p>
+                
+                    <p class="accordionElement" data-element="Drones" data-description="We have been conducting research on drone security; more specifically, around geofencing for drones, secure firmware updates, and certificateless key exchange protocols for a swarm of drones.">Drones</p>
+                
+                    <p class="accordionElement" data-element="Embedded System Security" data-description="I am specifically interested in the interactions between hardware and software for the secure operation of mobile device platforms and operating systems. We are exploring hardware and software binding along with software countermeasures and micro kernel attestations that will safeguard the overall security of the underlying platform.">Embedded System Security</p>
+                
+                    <p class="accordionElement" data-element="Mobile Phone Forensics" data-description="I have a keen interest in mobile phone forensic mechanisms that adhere to robust and ethical frameworks; I am leading the participation and contribution of RHUL in a Horizon EU project related to this topic.">Mobile Phone Forensics</p>
+                
+                    <p class="accordionElement" data-element="Automotive" data-description="As a part of our research efforts in the field of automotive security, we investigated the “in-security” of CANBUS [CP92, CP93] and the use of mobile devices for attesting the current status of vehicle security [CP83]. We have examined existing industrial proposals (e.g. the EVITA project) and, based on our analysis, we have proposed a number of improved protocols, related to safety and security measures; these are implemented in commercial Electronic Control Units (ECUs), and they are analysed using mechanical tools, such as CasperFDR and Scyther [CP111].">Automotive</p>
+                
+                    <p class="accordionElement" data-element="Avionics" data-description="I have a notable interest in the secure deployment and utilisation of hardware security sensors and Electronic Control Units (ECUs) in avionics and automotive environments. I was, in fact, the Primary Investigator in the Secure High availability Avionics Wireless Networks (SHAWN) project (funded by EPSRC and TSB), which provided security expertise and advice to a number of industrial project partners. Consequent to our work, we have published multiple papers [CP130, CP137, CP138], with paper [CP99] winning the best conference paper award in the security session of a major avionics conference.">Avionics</p>
+                
+                    <p class="accordionElement" data-element="Software and Hardware Binding" data-description="Elemental to this research thread [CP106, CP123], we consider an exceptionally powerful adversary model that involves an attacker being able to bypass the tamper-resistant properties of individual nodes in cyber-physical systems. In essence, the attacker is able to read the contents of different memories and, as a result, any protection based on the tamper-resistant abilities of the chip, such as secure storage of cryptographic keys, will be rendered useless. We are proposing a model, consisting of different hardware intrinsic functions [CP98], that will allow the binding of software to a specific hardware, not only for IP protection, but also for protection against counterfeit, reused and repackaged products.">Software and Hardware Binding</p>
+                
+            </div>
+            <div class="accordionContent" id="accordionContent">
+                
+            </div>
+            <div class="rightAccordionElements">
+                <h5>Research</h5>
+                
+                    <p class="accordionElement" data-title="Mobile Device Security" data-description="Mobile devices have developed in to mainstream and powerful computing devices. We are examining the underlying security mechanisms of mobile devices to enable secure application installation, permission enforcement, prevention of privilege escalation, and provisioning of forensic tools.">Mobile Device Security</p>
+                
+                    <p class="accordionElement" data-title="Utilising Side-Channel Leakage" data-description="Side-channel leakages have hitherto been used to break into systems and algorithms. However, we propose a state-of-the-art approach to utilising side-channel leakages in embedded devices, using them to fingerprint a platform and to verify secure application execution.">Utilising Side-Channel Leakage</p>
+                
+                    <p class="accordionElement" data-title="Security Protocol Design" data-description="Currently, there are a number of secure channel protocols that do not take into account the specific characteristics (e.g. processing overheads, communication buffers, etc.) of the underlying technology utilised by different devices. We have proposed various secure channel protocols that incorporate all these often neglected factors in to their design.">Security Protocol Design</p>
+                
+                    <p class="accordionElement" data-title="Smart Energy Trading" data-description="In our research into smart energy trading, we analyse the various energy market models and propose new directions for a decentralised P2P marketplace for trading energy, which addresses the problems of developing secure and privacy-aware environments through the use of block chains.">Smart Energy Trading</p>
+                
+                    <p class="accordionElement" data-title="Transport System Security" data-description="We have been investigating the security requirements of NFC handsets in the transport industry, along with their perceived security advantages and disadvantages. This thread of work also involves examining the use of NFC handsets as ticketing devices, taking into account tokenization, relay attacks, and performance and security requirements.">Transport System Security</p>
+                
+                    <p class="accordionElement" data-title="Block Chain Technologies" data-description="We have been examining the effective and resilient use of block chain technologies in decentralised transport and ticketing, energy market, open governance, automotive and drone mission accomplishment.">Block Chain Technologies</p>
+                
+                    <p class="accordionElement" data-title="User Centric Devices" data-description="Further to our research into user centric devices, we are proposing user centric models of ownership for various personal devices, including smart cards, Trusted Execution Environments and mobile phones. The nature of these operational environments creates specific research questions in terms of how the applications will be downloaded, installed, decommissioned and attested.">User Centric Devices</p>
+                
+                    <p class="accordionElement" data-title="Resilient Computing" data-description="I am interested in the provisioning of embedded operating systems and application execution mechanisms that take advantage of hardware and software enhancements to avoid side-channel attacks.">Resilient Computing</p>
+                
+                    <p class="accordionElement" data-title="Data Provenance and Causality Chains" data-description="In the Internet of Things (IoT) and Cyber-Physical Systems (CPS), data might be collected from a number of nodes that are deployed in the field. We are investigating data provenance mechanisms, through the creation of causality chains, for personal information stored in computing platforms and the cloud.">Data Provenance and Causality Chains</p>
+                
+                    <p class="accordionElement" data-title="Video and Computer Games Anti-cheating Mechanisms" data-description="We are investigating the protection of software computer games through hardware enhancements. The role of anti-cheating engines is examined with the view of providing hardware, software, networking and distributed ledger technologies.">Video and Computer Games Anti-cheating Mechanisms</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var accordionElements = [...document.getElementsByClassName("accordionElement")]
+        console.log(accordionElements[0])
+        
+        // set first one active by default
+        accordionElements[0].classList.add('highlightGold')
+        //p = document.createElement('p')
+        //p.setAttribute('id', 'accordionContentParagraph')
+        //p.textContent = accordionElements[0].dataset.description
+        //document.getElementById('accordionContent').appendChild(p)
+        document.getElementById('accordionContent').textContent = accordionElements[0].dataset.description
+        
+        accordionElements.forEach(accordionElement => {
+            accordionElement.addEventListener('mouseover', () => {
+                let accordionContent = document.getElementById('accordionContent')
+                accordionContent.textContent = accordionElement.dataset.description
+                //p = document.getElementById('accordionContentParagraph')
+                //p.textContent = accordionElement.dataset.description
+                //document.getElementById('accordionContent').appendChild(p)
+
+                accordionElements.forEach(item => {item.classList.remove('highlightGold')})
+                accordionElement.classList.add('highlightGold')
+            })
+        })
+
+    </script>
+
+    <div class="newsRecentWorkContainer">
+
+        <div class="recentWork" id="recentWork">
+            
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <h3>Recent work</h3>
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link active" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Recent Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#presentations" role="tab" aria-controls="contact" aria-selected="false">Presentations</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="profile" aria-selected="false">Books</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#consulting" role="tab" aria-controls="contact" aria-selected="false">Consulting</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
+
+                        
+                        
+                        
+                            
+
+                            <p>
+                                <span>[211]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Benjamin Semal,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/investigating-black-box-function-recognition-using-hardware-perfo">"Investigating Black-Box Function Recognition Using Hardware Performance Counters",</a>
+                                <span>27 Nov 2022,</span>
+                
+                                
+                                    <span>IEEE Transactions on Computers,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href="https://arxiv.org/abs/2204.11639">https://arxiv.org/abs/2204.11639</a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[210]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/jan-kalbantner">Jan Kalbantner</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Benjamin Semal,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/a-side-channel-analysis-of-sensor-multiplexing-for-covert-channel">"A Side-channel Analysis of Sensor Multiplexing for Covert Channels and Application Fingerprinting on Mobile Devices",</a>
+                                <span>22 Mar 2022,</span>
+                
+                                
+                
+                                
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href="https://arxiv.org/abs/2110.06363">https://arxiv.org/abs/2110.06363</a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[209]</span>
+                                
+                        
+                                
+                                    
+                                        <span>F Thomas-Brans,</span>
+                                    
+                                
+                                    
+                                        <span>Thibaut Heckmann,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Damien Sauveron,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/new-diagnostic-forensic-protocol-for-damaged-secure-digital-memor">"New Diagnostic Forensic Protocol for Damaged Secure Digital Memory Cards",</a>
+                                <span>11 Mar 2022,</span>
+                
+                                
+                                    <span>IEEE Access,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.1109/ACCESS.2022.3158958">10.1109/ACCESS.2022.3158958</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[208]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Nico Van Heijningen,</span>
+                                    
+                                
+                                    
+                                        <span>Driss Aboulkassimi,</span>
+                                    
+                                
+                                    
+                                        <span>Clement Gaine,</span>
+                                    
+                                
+                                    
+                                        <span>Thibaut Heckmann,</span>
+                                    
+                                
+                                    
+                                        <span>David Naccache,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/physical-fault-injection-and-side-channel-attacks-on-mobile-devic">"Physical Fault Injection and Side-Channel Attacks on Mobile Devices: A Comprehensive Analysis",</a>
+                                <span>17 Sep 2021,</span>
+                
+                                
+                                    <span>Computers and Security,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.1016/j.cose.2021.102471">10.1016/j.cose.2021.102471</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[207]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/jan-kalbantner">Jan Kalbantner</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/darren-hurley-smith">Darren Hurley-Smith</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Benjamin Semal,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/a-dlt-based-smart-contract-architecture-for-atomic-and-scalable-t">"A DLT-based Smart Contract Architecture for Atomic and Scalable Trading",</a>
+                                <span>6 May 2021,</span>
+                
+                                
+                
+                                
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href="https://arxiv.org/abs/2105.02937">https://arxiv.org/abs/2105.02937</a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[206]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Georges-Axel Jaloyan,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/lira-v-lightweight-remote-attestation-for-constrained-risc-v-devi">"LIRA-V: Lightweight Remote Attestation for Constrained RISC-V Devices",</a>
+                                <span>May 2021,</span>
+                
+                                
+                                    <span>IEEE,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.1109/SPW53761.2021.00036">10.1109/SPW53761.2021.00036</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[205]</span>
+                                
+                        
+                                
+                                    
+                                        <span>Vihangi Vagal ,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd">Carlton Shepherd</a><span>,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/a-new-approach-to-complex-dynamic-geofencing-for-unmanned-aerial-">"A New Approach to Complex Dynamic Geofencing for Unmanned Aerial Vehicles",</a>
+                                <span>14 Apr 2021,</span>
+                
+                                
+                                    <span>IEEE,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[204]</span>
+                                
+                        
+                                
+                                    
+                                        <span>Anjia  Yang,</span>
+                                    
+                                
+                                    
+                                        <span>Dutliff Boshoff,</span>
+                                    
+                                
+                                    
+                                        <span>Qiao Hu,</span>
+                                    
+                                
+                                    
+                                        <span>Gerhard Hancke,</span>
+                                    
+                                
+                                    
+                                        <span>Xizhao Luo,</span>
+                                    
+                                
+                                    
+                                        <span>Jian Weng,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/keith-mayes">Keith Mayes</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/privacy-preserving-group-authentication-for-rfid-tags-using-bit-c">"Privacy-preserving Group Authentication for RFID Tags Using Bit-Collision Patterns",</a>
+                                <span>12 Feb 2021,</span>
+                
+                                
+                                    <span>IEEE Internet of Things Journal,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.1109/JIOT.2021.3059047">10.1109/JIOT.2021.3059047</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[203]</span>
+                                
+                        
+                                
+                                    
+                                        <span>Benjamin Semal,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/keith-mayes">Keith Mayes</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/jan-kalbantner">Jan Kalbantner</a><span>,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/one-covert-channel-to-rule-them-all-a-practical-approach-to-data-">"One Covert Channel to Rule Them All: A Practical Approach to Data Exfiltration in the Cloud",</a>
+                                <span>9 Feb 2021,</span>
+                
+                                
+                                    <span>19th IEEE International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom 2020),</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.1109/TrustCom50675.2020.00053">10.1109/TrustCom50675.2020.00053</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                            
+
+                            <p>
+                                <span>[202]</span>
+                                
+                        
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/jan-kalbantner">Jan Kalbantner</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis">Konstantinos Markantonakis</a><span>,</span>
+                                    
+                                
+                                    
+                                        <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/persons/darren-hurley-smith">Darren Hurley-Smith</a><span>,</span>
+                                    
+                                
+                                    
+                                        <span>Raja Naeem Akram,</span>
+                                    
+                                
+                                    
+                                        <span>Benjamin Semal,</span>
+                                    
+                                
+                                <a style="display: inline;" href="https://pure.royalholloway.ac.uk/en/publications/p2pedge-a-decentralised-scalable-p2p-architecture-for-energy-trad">"P2PEdge: A Decentralised, Scalable P2P Architecture for Energy Trading in Real-Time",</a>
+                                <span>25 Jan 2021,</span>
+                
+                                
+                                    <span>Energies,</span>
+                                
+                
+                                
+                                    <span>
+                                        <a href="https://doi.org/10.3390/en14030606">10.3390/en14030606</a>
+                                    </span>
+                                
+                                
+                                
+                                    <span><a href=""></a></span>
+                                
+                            </p>
+                        
+                        
+                    </div>
+                    <div class="tab-pane" id="presentations" role="tabpanel">
+                        
+                        <br>
+                        <h3>8a. Invited keynote to a major international conference</h3>
+                        <br>
+                        <p><b>Delivered</b></p>
+                        <ul>
+                            <li>2019, Edinburgh, Keynote talk, Big Data in Cyber Security, “From Big Computers and Small Data to Small Computers and Big Data”, June 2019</li>
+                            <li>2018, Dubai, Keynote Talk, IEEE International Conference on Signal Processing and Information Security 2018, “Secure Application Execution on IoT Devices – Lessons Learned”</li>
+                            <li>2017, Bucharest, Romania, “Ambient Sensing Based Relay Attack Detection in Smartphone Contactless Transactions”, International Conference on Security for Information Technology and Communications (SECITC) 2017.</li>
+                            <li>2015, Bucharest, Romania, Keynote Talk, 8th International Conference on Security for Information Technology and Communications, SECITC 2015, "Secure and Trusted Application Execution on Embedded Devices"</li>
+                            <li>2012, Nijmegen, The Netherlands, Keynote Talk, The 8th Workshop on RFID Security and Privacy, “Interplay of Business Objectives and Academic Research – Holders of NFC Mobile Service Destiny”</li>
+                            <li>2012, London, UK, Keynote Talk, The 7th International Conference for Internet Technology and Secured Transactions (ICITST-2012) , Smart cards, Secure Elements and NFC Security – The Status Quo”</li>
+                            <li>2012, Hangzhou, China, Keynote Talk, 8th International Conference on Information Security Practice and Experience (ISPEC 2012), “Are smart cards the weakest link? Is `practical information security research’ still significant?”</li>
+                        </ul>
+        
+                        <br>
+                        <h3>8b. An invited symposium/workshop/summer school presentation</h3>
+                        <ul>
+                            <li>2018, Abu Dhabi, Keynote Talk, UAE Cyber-Security Symposium 2018, “Secure and Trusted Application Execution”, Khalifa University.</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytilene, Greece, July 2018</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, July 2017</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Leuven, Belgium, July 2016</li>
+                            <li>“Cyber Physical System Security", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2015</li>
+                            <li>“Secure Application Execution on Cyber Physical Devices”, Summer School on “Design and security of cryptographic algorithms and devices for real-world applications”, Šibenik - Croatia 01 June - 06 June 2014</li>
+                            <li>“Embedded System Security Lesson Learned", Intensive Programme on Information and Communications Security (IPICS), Mytelene, Greece, July 2014</li>
+                            <li>“Smart Cards: State-of-the-Art to Future Directions”, Invited Paper, IEEE International Symposium on Signal Processing and Information Technology, December 12-15, 2013 - Athens, Greece.</li>
+                            <li>"Cyber Physical Systems", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2013.</li>
+                            <li>“Smart card Security”, ICareNet 2013, 3rd of December 2012, Network of Excellence - Winter School, Imperial College, London.</li>
+                            <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2012</li>
+                            <li>"Embedded System Security", Intensive Programme on Information and Communications Security (IPICS), Corfu, Greece, August 2011</li>
+                            <li>"Hardware Token Security", Intensive Programme on Information and Communications Security (IPICS), Samos, Greece, August 2010</li>
+                            <li>"Smart card Security", Intensive Programme on Information and Communications Security (IPICS), Vienna, Austria, August 2009</li>
+                        </ul>
+        
+                        <br>
+                        <h3>8c. An invited presentation to another academic department (UK or international)</h3>
+                        <ul>
+                            <li>2019, Khalifa University (UAE), “Embedded system security, bridging theory and practice. The Smart Card and IoT Security Centre (SCC) perspective.”, October 2019</li>
+                            <li>2018, Abu Dhabi, Invited Talk, Department of Electrical Engineering, “Secure and Trusted Application Execution on Embedded Devices”, Khalifa University.</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 18 January,   2017</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 1st December   2015</li>
+                            <li>“Embedded Devices, Platforms and Applications”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th January  2015</li>
+                            <li>“Embedded Systems Security”, Invited Day Course, KTH, Stockholm, Sweden, April 2015.</li>
+                            <li>“Multi-Application Smart card Operating Systems”, Invited Lecture in the BSc Programme in Computer Science, University of Bordeux and University or Limoges, February and March 2015</li>
+                            <li>“Embedded System Security”, Khalifa University, April 2014.</li>
+                            <li>“Multi-application Smart Embedded Devices”, Invited Lecture in the MSc Programme in Digital Systems Security, University of Piraeus, Greece, 13th November 2013</li>
+                            <li>University of Athens, MSc in Computer Science, Invited talk on “Embedded System Security”, April 2013.</li>
+                            <li>"Smart card Security Theory and Practice”, PRActical aspeCts on SEcurity (PRACSE 09), organised by the Athens Institute of Technology (AIT), June 2009.</li>
+                            <li>“From Smart card to Smart card system security”, PRActical aspeCts on SEcurity (PRACSE’08), organised by the Athens Institute of Technology (AIT), May 2008.</li>
+                            <li>“Smart card Security”, Institute of Computer Science (ICS) Foundation for Research and Technology – Hellas (FORTH), Heraklion, Greece, February 2008.</li>
+                        </ul>
+        
+                    </div>
+                    <div class="tab-pane" id="books" role="tabpanel">
+                        
+                            <div class="book">
+                                <img src="/assets/images/books/coming-soon.png" alt="Trusted Execution Environments" class="bookImage">
+
+                                <div>
+                                    
+                                        <b class="bookTitle">
+                                            <a href="https://web.archive.org/web/20180331130522/http:/km.isg.rhul.ac.uk/supplementary-information-book">Trusted Execution Environments</a></b>
+                                    
+                                    <p class="bookAuthors">Carlton Shepherd, Konstantinos Markantonakis</p>
+                                    <p class="bookText"></p>
+                                </div>
+                            </div>
+                        
+                            <div class="book">
+                                <img src="/assets/images/books/Secure Smart Embedded Devices, Platforms and Applications.jpg" alt="Secure Smart Embedded Devices, Platforms and Applications" class="bookImage">
+
+                                <div>
+                                    
+                                        <b class="bookTitle">
+                                            <a href="https://web.archive.org/web/20180331130522/http:/km.isg.rhul.ac.uk/supplementary-information-book">Secure Smart Embedded Devices, Platforms and Applications</a></b>
+                                    
+                                    <p class="bookAuthors">Konstantinos Markantonakis, Keith Mayes</p>
+                                    <p class="bookText">ISBN: 978-1-4614-7914-7 (Print) 978-1-4614-7915-4 (Online)</p>
+                                </div>
+                            </div>
+                        
+                            <div class="book">
+                                <img src="/assets/images/books/Smart Cards, Tokens, Security and Applications.jpg" alt="Smart Cards, Tokens, Security and Applications" class="bookImage">
+
+                                <div>
+                                    
+                                        <b class="bookTitle">Smart Cards, Tokens, Security and Applications</b>
+                                    
+                                    <p class="bookAuthors">Keith E. Mayes, Konstantinos Markantonakis (eds.)</p>
+                                    <p class="bookText">ISBN: 978-0-387-72197-2 (Print) 978-0-387-72198-9 (Online) Publisher: Springer US, 2008 DOI: 10.1007/978-0-387-72198-9</p>
+                                </div>
+                            </div>
+                        
+                            <div class="book">
+                                <img src="/assets/images/books/Smart Cards, Tokens, Security and Applications Second Edition.jpg" alt="Smart Cards, Tokens, Security and Applications" class="bookImage">
+
+                                <div>
+                                    
+                                        <b class="bookTitle">Smart Cards, Tokens, Security and Applications</b>
+                                    
+                                    <p class="bookAuthors">Keith Mayes, Konstantinos Markantonakis</p>
+                                    <p class="bookText">Springer International Publishing Hardcover ISBN:978-3-319-50498-8 DOI: 10.1007/978-3-319-50500-8</p>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="tab-pane" id="consulting" role="tabpanel">
+                        <br>
+                        <h3>Areas of Expertise</h3>
+                        <p>I initially got involved in Information Security consulting projects while pursuing my PhD in Information Security at Royal Holloway. Since then, I have worked on a number of Information Security and Smart Card related projects with numerous high profile clients, and I continue to provide consultancy for a variety of Information Security and Smart Card related areas: </p>
+                        <ul>
+                            <li>Smart Card physical security analysis</li>
+                            <li>Multi-application Smart Card migration program planning</li>
+                            <li>Project management for financial institutions and transport operators</li>
+                            <li>Business case development for chip migration programs</li>
+                            <li>Smart Card application (Java card, SIM card, Multos) security review, design and development</li>
+                            <li>Smart Card security evaluations (Common Criteria), Security Target and Protection Profile Development</li>
+                            <li>Risk analysis on Smart Card technology, protocols and systems</li>
+                            <li>Smart Card security protocol design and review</li>
+                            <li>Security of mobile phone platforms and secure elements</li>
+                            <li>Contactless Smart Card/RFID security and Mifare card technology</li>
+                        </ul>
+                        <br>
+                        <h3>Selected Projects</h3>
+                        <ul>
+                            <li>I was a part of the team, along with colleagues from the Information Security Group’s Smart Card Centre, which performed a counter expertise analysis of a report into the Dutch OV-Chipkaart transport system in 2008. This was in response to some recently published attacks on Mifare Classic smart cards. For more information please follow these links: <a href="https://web.archive.org/web/20191025082324/http:/www.isg.rhul.ac.uk/node/274">ISG_Dutch</a> and <a href="https://web.archive.org/web/20191025082324/http:/www.scc.rhul.ac.uk/public/OV Task Explanatory Note.pdf">SCC_Dutch</a>. This was a high profile piece of work, reported extensively on the internet (see further details <a href="https://web.archive.org/web/20191025082324/http:/www.thetechherald.com/article.php/200816/701">here</a>).</li>
+                            <li>Since then, our team got involved in further work relating to Mifare and chip migration issues, and planning for the Dutch transport system.</li>
+                            <li>I was involved in preparing an evaluation paper for different options in which security controllers can exist in mobile devices. The document was also presented as an ETSI internal document and an early version can be found <a href="https://web.archive.org/web/20191025082324/http:/www.crisptelecom.com/files/simuc.pdf">here</a>.</li>
+                            <li>I was also involved in the preparation and delivery of a smart card security training course for the Information Security department of a major financial institution.</li>
+                            <li>Security analysis of public key cryptography in Smart card devices and tools with restricted processing resources.</li>
+                            <li>Security analysis of a smart card system for the provision of wireless telecommunications services.</li>
+                        </ul>
+        
+                    </div>
+                  </div>
+        </div>
+
+        <div class="news">
+            <div id="carousel" class="posts">
+                <div class="newsElement"">
+                    <a href="https://scc.rhul.ac.uk/">
+                        <img src="/assets/images/SCC-logo.png" alt="">
+                    </a>
+                </div>
+                <div class="newsElement"">
+                    <a href="https://www.royalholloway.ac.uk/">
+                        <img src="/assets/images/royalHolloway.jpg" alt="">
+                    </a>
+                </div> 
+                <div class="newsElement"">
+                    <a href="/news">
+                        <h4>Latest News!</h4>
+                    </a>
+                </div> 
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#real-world-impact">
+                            <h6>Real World Impact</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#patent-and-commercialization">
+                            <h6>Patent and commercialization</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#post-doctoral-research-fellow-in-mobile-phone-forensics">
+                            <h6>Post-Doctoral Research Fellow in Mobile Phone Forensics</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#post-doctoral-research-fellow-in-the-smart-card-and-iot-security-centre">
+                            <h6>Post-Doctoral Research Fellow in The Smart card and IoT Security Centre</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#research-assistant-in-mobile-phone-forensics">
+                            <h6>Research Assistant in Mobile Phone Forensics</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#research-assistant-in-the-smart-card-and-iot-security-centre">
+                            <h6>Research Assistant in The Smart card and IoT Security Centre</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#best-paper-award">
+                            <h6>Best Paper Award</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#best-paper-award">
+                            <h6>Best Paper Award</h6>
+                        </a>
+                    </div>
+                
+                    
+                    
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#patent-and-commercialization">
+                            <h6>Patent and commercialization</h6>
+                        </a>
+                    </div>
+                
+            </div>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+        
+    </div>
+    <style>
+
+        #carouselWrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        #carousel {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        var Carousel = {
+            width: 250,
+            rowHeight: 120,
+            numVisible: 4,
+            duration: 600,
+            padding: 2
+        }
+        function rotateForward() {
+            var carousel = Carousel.carousel,
+                children = carousel.children,
+                firstChild = children[0],
+                lastChild = children[children.length - 1];
+            carousel.insertBefore(lastChild, firstChild);
+        }
+        function rotateBackward() {
+            var carousel = Carousel.carousel,
+            children = carousel.children,
+            firstChild = children[0],
+            lastChild = children[children.length - 1];
+            carousel.insertBefore(firstChild, lastChild.nextSibling);
+        }
+        function animate(begin, end, finalTask) {
+            var wrapper = Carousel.wrapper,
+                carousel = Carousel.carousel,
+                change = end - begin,
+                duration = Carousel.duration,
+                startTime = Date.now();
+            carousel.style.top = begin + 'px';
+            var animateInterval = window.setInterval(function () {
+                var t = Date.now() - startTime;
+                if (t >= duration) {
+                    window.clearInterval(animateInterval);
+                    finalTask();
+                    return;
+                }
+                t /= (duration / 2);
+                var top = begin + (t < 1 ? change / 2 * Math.pow(t, 3) :
+                                            change / 2 * (Math.pow(t - 2, 3) + 2));
+                carousel.style.top = top + 'px';
+            }, 1000 / 60);
+        }
+
+        window.onload = function(){
+            var carousel = Carousel.carousel = document.getElementById('carousel')
+            var carouselItems = carousel.getElementsByTagName('div')
+            var carouselItemWidth = Carousel.width
+            var padding = Carousel.padding
+            var rowHeight = Carousel.rowHeight + (2 * padding)
+
+            for(var i = 0; i < carouselItems.length; i++){
+                var carouselItem = carouselItems[i]
+
+                carouselItem.style.height = rowHeight + 'px'
+                carouselItem.style.width = carouselItemWidth + 'px'
+                carouselItem.style.paddingTop = padding + 'px'
+                carouselItem.style.paddingBottom = padding + 'px'
+            }
+            Carousel.rowHeight = carousel.getElementsByTagName('div')[0].offsetHeight
+            carousel.style.visibility = 'visible';
+            carousel.style.height = Carousel.numVisible * Carousel.rowHeight + 'px'
+
+            var wrapper = Carousel.wrapper = document.createElement('div')
+            wrapper.id = 'carouselWrapper'
+
+            wrapper.style.width = carousel.offsetWidth + 'px'
+            
+            wrapper.style.height = carousel.offsetHeight + 'px'
+
+            carousel.parentNode.insertBefore(wrapper, carousel)
+            wrapper.appendChild(carousel)
+
+            var prevButton = document.getElementById('prev')
+            var nextButton = document.getElementById('next')
+
+            prevButton.onclick = () => {
+                prevButton.disabled = nextButton.disabled = true
+                rotateForward()
+                animate(-Carousel.rowHeight, 0, () => {
+                    carousel.style.top = '0'
+                    prevButton.disabled = nextButton.disabled = false
+                })
+            }
+            nextButton.onclick = () => {
+                prevButton.disabled = nextButton.disabled = true
+                animate(0, -Carousel.rowHeight, () => {
+                    carousel.style.top = '0'
+                    rotateBackward()
+                    prevButton.disabled = nextButton.disabled = false
+                })
+            }
+
+        }
+
+    </script>
+
+    <!-- auto scrolling -->
+    <script>
+        var prevButton = document.getElementById('prev')
+        var nextButton = document.getElementById('next')
+
+        prevButton.style.visibility = 'hidden'
+        nextButton.style.visibility = 'hidden'
+
+        setInterval(() => {
+            nextButton.click()
+        }, 2000)
+    </script>
+
+</div>    
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Dropdown Hover JS -->
+    <!-- <script src="js/bootstrap-dropdownhover.min.js"></script> -->
+</body>
+</html>

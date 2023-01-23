@@ -74,7 +74,7 @@ layout: base
                 {% if publication.links != blank %}
                     <span><a href="{{publication.links}}">{{publication.links}}</a></span>
                 {% endif %}
-        
+            </p>
         {% endfor %}
         
         <script>
@@ -110,7 +110,7 @@ layout: base
                 while(childWithTextFound == false){
                     var lastChild = children[lastChildIndex]
     
-                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
+                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',') && lastChild.children[0].tagName != 'A'){
                         lastChild.textContent = lastChild.textContent.slice(0, -1)
                         console.log(lastChild.textContent)
 
