@@ -410,7 +410,7 @@
         
             
         
-            <!-- <h3 id="{"title"=>"A New Approach to Complex Dynamic Geofencing for Unmanned Aerial Vehicles", "titleLink"=>"https://pure.royalholloway.ac.uk/en/publications/a-new-approach-to-complex-dynamic-geofencing-for-unmanned-aerial-", "publishDate"=>"14 Apr 2021", "authors"=>[{"name"=>"Vihangi Vagal "}, {"name"=>"Konstantinos Markantonakis", "link"=>"https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis"}, {"name"=>"Carlton Shepherd", "link"=>"https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd"}], "doi"=>{}, "links"=>"", "journal"=>"IEEE"}"></h3> -->
+            <!-- <h3 id="{"title"=>"A New Approach to Complex Dynamic Geofencing for Unmanned Aerial Vehicles", "titleLink"=>"https://pure.royalholloway.ac.uk/en/publications/a-new-approach-to-complex-dynamic-geofencing-for-unmanned-aerial-", "publishDate"=>"14 Apr 2021", "authors"=>[{"name"=>"Vihangi Vagal"}, {"name"=>"Konstantinos Markantonakis", "link"=>"https://pure.royalholloway.ac.uk/en/persons/konstantinos-markantonakis"}, {"name"=>"Carlton Shepherd", "link"=>"https://pure.royalholloway.ac.uk/en/persons/carlton-shepherd"}], "doi"=>{}, "links"=>"", "journal"=>"IEEE"}"></h3> -->
         
             <p>
                 <span>[205]</span>
@@ -418,7 +418,7 @@
         
                 
                     
-                        <span>Vihangi Vagal ,</span>
+                        <span>Vihangi Vagal,</span>
                     
                 
                     
@@ -9488,28 +9488,29 @@
 
             // remove commas from the end of references
             var references = document.getElementsByTagName('p')
-            console.log(references)
             for(var reference of references){
                 var children = reference.children
 
                 if(children.length == 0){continue}
+                if(children[children.length - 1].children[0].textContent != ''){continue}
 
                 var childWithTextFound = false
                 var lastChildIndex = children.length - 1
 
+
+                ///
                 while(childWithTextFound == false){
                     var lastChild = children[lastChildIndex]
-
-    
-                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
+                        
+                    if (lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
+                        //console.log(lastChild.textContent) 
                         lastChild.textContent = lastChild.textContent.slice(0, -1)
-                        console.log(lastChild.textContent)
+                        //console.log(lastChild.textContent)
 
                         childWithTextFound = true
                     }
                     lastChildIndex--
                 }
-
             }
 
 

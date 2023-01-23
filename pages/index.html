@@ -230,6 +230,33 @@ title: Konstantinos Markantonakis
                                 {% endif %}
                             </p>
                         {% endfor %}
+                        <script>
+                            var references = document.getElementsByTagName('p')
+                            for(var reference of references){
+                                var children = reference.children
+
+                                if(children.length == 0){continue}
+                                if(children[children.length - 1].children[0].textContent != ''){continue}
+
+                                var childWithTextFound = false
+                                var lastChildIndex = children.length - 1
+
+
+                                ///
+                                while(childWithTextFound == false){
+                                    var lastChild = children[lastChildIndex]
+                                        
+                                    if (lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
+                                        //console.log(lastChild.textContent) 
+                                        lastChild.textContent = lastChild.textContent.slice(0, -1)
+                                        //console.log(lastChild.textContent)
+
+                                        childWithTextFound = true
+                                    }
+                                    lastChildIndex--
+                                }
+                            }
+                        </script>
                         
                     </div>
                     <div class="tab-pane" id="presentations" role="tabpanel">
