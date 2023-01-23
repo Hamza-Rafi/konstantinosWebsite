@@ -9499,8 +9499,9 @@
 
                 while(childWithTextFound == false){
                     var lastChild = children[lastChildIndex]
+
     
-                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',') && lastChild.children[0].tagName != 'A'){
+                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
                         lastChild.textContent = lastChild.textContent.slice(0, -1)
                         console.log(lastChild.textContent)
 
