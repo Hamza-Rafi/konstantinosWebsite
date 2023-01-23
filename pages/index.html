@@ -381,7 +381,12 @@ title: Konstantinos Markantonakis
                 </div> 
                 {% for news in site.data.news %}
                     {% assign titleWords = news.title | downcase | split: ' ' %}
-                    {% assign titleId = titleWords | join: "-" %}
+                    
+                    {% if news.id %}
+                        {% assign titleId = news.id %}
+                    {% else %}
+                        {% assign titleId = titleWords | join: "-" %}
+                    {% endif %}
 
                     <div class="newsElement multine-ellipsis">
                         <a href="/news#{{titleId}}">
@@ -456,6 +461,7 @@ title: Konstantinos Markantonakis
             var padding = Carousel.padding
             var rowHeight = Carousel.rowHeight + (2 * padding)
 
+            
             for(var i = 0; i < carouselItems.length; i++){
                 var carouselItem = carouselItems[i]
 
