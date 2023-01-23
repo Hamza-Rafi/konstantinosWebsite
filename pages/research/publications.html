@@ -2,72 +2,145 @@
 permalink: /research/publications
 layout: base
 ---
-
-<style>
-    .hashLink{
-        scroll-margin-top: 5rem;
-    }
-</style>
-
-<h1>All Publications</h1> 
-<hr>
-
-<h3 id="publication-outputs">PUBLICATION OUTPUTS</h3>
-<p>My Google Scholar profile can be obtained from <a href="https://scholar.google.co.uk/citations?user=NygekFcAAAAJ&amp;hl=en.">here</a>.</p>
-<ul>
-    <li><a href="/research/publications/#BOOKS">Books</a></li>
-    <li><a href="/research/publications/#CONFERENCE-CONTRIBUTIONS">Conference contributions</a></li>
-    <li><a href="/research/publications/#CHAPTERS">Chapters</a></li>
-    <li><a href="/research/publications/#ARTICLES">Articles</a></li>
-    <li><a href="/research/publications/#PAPERS">Papers</a></li>
-    <li><a href="/research/publications/#OTHER-CONTRIBUTIONS">Other contributions</a></li>
-    <li><a href="/research/publications/#SPECIAL-ISSUES">Special issues</a></li>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#publications" role="tab" aria-controls="home" aria-selected="true">Publications</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#books" role="tab" aria-controls="contact" aria-selected="false">Books</a>
+    </li>
 </ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
+        <style>
+            .hashLink{scroll-margin-top: 5rem;}
+            .yearLink{margin: 0.5rem;}
+            #yearLinks{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
 
-<h3 id="BOOK">Books</h3>
+        </style>
 
-{% for book in site.data.books %}
-<div>
-    <img src="{{book.image}}" alt="{{book.title}}" class="bookImage">
+            
+        <div id="yearLinks"></div>
+        
+        
+        {% assign countdown = site.data.publications | size %}
+        <p>Total number of publications: {{countdown}}</p>
+        
+        {% assign publications = site.data.publications %}
+        
+        {% assign firstDate =  publications[0].publishDate | split: ' ' %}
+        {% assign lastYear = firstDate[-1] %}
+        <h3 class="hashLink" id="{{lastYear}}">{{lastYear}}</h3>
+        
+        {% for publication in publications %}
+            {% assign currentDate =  publication.publishDate | split: ' ' %}
+            {% assign currentYear =  currentDate[-1] %}
+        
+            {% if currentYear != lastYear %}
+                <h3 class="hashLink" id="{{currentYear}}">{{currentYear}}</h3>
+                {% assign lastYear = currentYear %}
+            {% endif %}
+        
+            <!-- <h3 id="{{ publication }}">{{publication[0]}}</h3> -->
+        
+            <p>
+                <span>[{{countdown}}]</span>
+                {% assign countdown = countdown | minus: 1 %}
+        
+                {% for author in publication.authors %}
+                    {% if author.link %}
+                        <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
+                    {% else %}
+                        <span>{{author.name}},</span>
+                    {% endif %}
+                {% endfor %}
+                <a style="display: inline;" href="{{publication.titleLink}}">"{{ publication.title }}",</a>
+                <span>{{publication.publishDate}},</span>
 
-    <div>
-        {% if book.link %}
-            <b class="bookTitle">
-                <a href="{{ book.link }}">{{book.title}}</a></b>
-        {% else %}
-            <b class="bookTitle">{{book.title}}</b>
-        {% endif %}
-        <p class="bookAuthors">{{book.authors}}</p>
-        <p class="bookText">{{book.text}}</p>
+                {% if publication.journal != '' %}
+                    <span>{{publication.journal}},</span>
+                {% endif %}
+
+                {% if publication.doi != blank %}
+                    <span>
+                        <a href="{{publication.doi.link}}">{{publication.doi.text}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if publication.links != blank %}
+                    <span><a href="{{publication.links}}">{{publication.links}}</a></span>
+                {% endif %}
+        
+        {% endfor %}
+        
+        <script>
+            // make links at top of page
+            var h3s = document.getElementsByTagName('h3')
+            console.log(h3s)
+        
+            var yearLinks = document.getElementById('yearLinks')
+        
+            for(h3 of h3s){
+                var div = document.createElement('div')
+                div.classList.add('yearLink')
+        
+                var a = document.createElement('a')
+                a.href = '#' + h3.id
+                a.textContent = h3.id
+        
+                div.appendChild(a)
+                yearLinks.appendChild(div)
+            }
+
+            // remove commas from the end of references
+            var references = document.getElementsByTagName('p')
+            console.log(references)
+            for(var reference of references){
+                var children = reference.children
+
+                if(children.length == 0){continue}
+
+                var childWithTextFound = false
+                var lastChildIndex = children.length - 1
+
+                while(childWithTextFound == false){
+                    var lastChild = children[lastChildIndex]
+    
+                    if(lastChild.tagName == 'SPAN' && lastChild.textContent.endsWith(',')){
+                        lastChild.textContent = lastChild.textContent.slice(0, -1)
+                        console.log(lastChild.textContent)
+
+                        childWithTextFound = true
+                    }
+                    lastChildIndex--
+                }
+
+            }
+
+
+
+        </script>
+    </div>
+    <div class="tab-pane" id="books" role="tabpanel">
+        {% for book in site.data.books %}
+            <div class="book">
+                <img src="{{book.image}}" alt="{{book.title}}" class="bookImage">
+
+                <div>
+                    {% if book.link %}
+                        <b class="bookTitle">
+                            <a href="{{ book.link }}">{{book.title}}</a></b>
+                    {% else %}
+                        <b class="bookTitle">{{book.title}}</b>
+                    {% endif %}
+                    <p class="bookAuthors">{{book.authors}}</p>
+                    <p class="bookText">{{book.text}}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
-
-<br />
-{% for item in site.data.publications %}
-
-    <h3 id="{{ item[0] | upcase }}" class="hashLink">
-        {% assign words = item[0] | split: "-" %}
-        {% for word in words %}
-            {{word | capitalize}}
-        {% endfor %}
-    </h3>
-
-    <p>Total number of {{item[0] | replace: "-", " "}}: {{ item[1].size }}</p>
-
-    {% for entry in item[1] %}
-        <p>
-            <span>[{{ item[1].size | minus: forloop.index | plus: 1 }}]</span>
-            {% for author in entry.authors %}
-                {% if author.link %}
-                    <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
-                {% else %}
-                    <span>{{author.name}},</span>
-                {% endif %}
-            {% endfor %}
-            <span>{{entry.publishDate}},</span>
-            <a style="display: inline;" href="{{entry.titleLink}}">{{ entry.title }}</a>
-        </p>
-    {% endfor %}
-    <br />
-{% endfor %}

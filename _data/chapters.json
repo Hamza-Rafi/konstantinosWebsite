@@ -1,0 +1,65 @@
+[
+    {
+        "title": "Security and Trust Management",
+        "authors": "Konstantinos Markantonakis, Marinella Petrocchi",
+        "text": "16th International Workshop, STM 2020, co-located with the 25th European Symposium on Research in Computer Security, ESORICS 2020. Guildford, UK, September 17-18, 2020, Lecture Notes and Computer Science Proceedings, Pages: 148 pages, ISBN-10 : 3030598160",
+        "image": "/assets/images/books/Security and Trust Management.jpg"
+        
+    },
+    {
+        "title": "Information Security Theory and Practices, Smart cards, Mobile and Ubiquitous Computing Systems, First IFIP TC6/WG 8.8/ WG 11.2, International Workshop in Information Security Theory and Practices (WISTP)",
+        "authors": "Damien Sauveron, Konstantinos Markantonakis, Angelos Bilas, Jean-Jacques Quisquater",
+        "text": "Lecture Notes in Computer Science (LNCS), Vol 4462, Pages 255, ISBN: 978-3-540-72353-0",
+        "image": "/assets/images/books/Information Security Theory and Practices. Smart Cards, Mobile and Ubiquitous Computing Systems.jpg"
+        
+    },
+    {
+        "title": "Information Security Theory and Practices. Security and Privacy of Pervasive Systems and Smart Devices",
+        "authors": "P. Samarati, M. Tunstall, J. Posegga, K. Markantonakis, D. Sauveron (Eds.)",
+        "text": "Fourth IFIP WG 11.2 International Workshop, WISTP 2010, Passau, Germany, April 12-14, 2010. Springer Lecture Notes in Computer Science Series, Vol. 6033, 2010, 386 p. ISBN: 978-3-642-12367-2.",
+        "image": "/assets/images/books/Information Security Theory and Practices. Security and Privacy of Pervasive Systems and Smart Devices.jpg"
+        
+    },
+    {
+        "title": "Information Security Theory and Practices. Smart Devices, Convergence and Next Generation Networks.",
+        "authors": "J.A. Onieva, D. Sauveron, S. Chaumette, D. Gollmann, K. Markantonakis (Eds.)",
+        "text": "Second IFIP WG 11.2 International Workshop, WISTP 2008, Seville, Spain, May 13-16, 2008. Springer Lecture Notes in Computer Science Series, Vol. 5019, 2008, 151 p. ISBN: 978-3-540-79965-8.",
+        "image": "/assets/images/books/Information Security Theory and Practices. Smart Devices, Convergence and Next Generation Networks.jpg"
+        
+    },
+    {
+        "title": "Information Security Theory and Practices. Smart Cards, Mobile and Ubiquitous Computing Systems",
+        "authors": "D. Sauveron, K. Markantonakis, A. Bilas, A. J.-J. Quisquater (Eds.)",
+        "text": "First IFIP TC6 / WG 8.8 / WG 11.2 International Workshop, WISTP 2007, Heraklion, Crete, Greece, May 9-11, 2007. Springer Lecture Notes in Computer Science Series, Vol. 4462, 2007, 255p. ISBN: 978-3-540-72353-0.",
+        "image": "/assets/images/books/Information Security Theory and Practices. Smart Cards, Mobile and Ubiquitous Computing Systems.jpg"
+        
+    },
+    {
+        "title": "Special Issue on Advanced Semantic and Social Multimedia Technologies for Future Computing Environment Multimedia Tools and Applications",
+        "authors": "S. Rho , D. Sauveron, K. Markantonakis (Eds.)",
+        "text": "vol 64, No.2, 2013. Springer",
+        "image": "/assets/images/books/Special Issue on Advanced Semantic and Social Multimedia Technologies for Future Computing Environment Multimedia Tools and Applications.jpg"
+        
+    },
+    {
+        "title": "Handbook of Technology Management, vol. 2, Supply Chain Management, Marketing and Advertising, and Global Management",
+        "authors": "Konstantinos Markantonakis, Keith Mayes, Damien Sauveron, and Michael Tunstall Chapter in H. Bidgoli, Ed., ",
+        "text": "pp. 248-264, Wiley, 2010",
+        "image": "/assets/images/books/Handbook of Technology Management.jpg",
+        "link": "https://web.archive.org/web/20180331130522/http:/eu.wiley.com/WileyCDA/WileyTitle/productCd-047024948X,descCd-tableOfContents.html"
+    },
+    {
+        "title": "Handbook of Computer Networks",
+        "authors": "Konstantinos Markantonakis, Keith Mayes, Damien Sauveron, and Michael Tunstall Chapter in H. Bidgoli, Ed",
+        "text": "vol. 3, pp. 251-268, Wiley, 2007",
+        "image": "/assets/images/books/Communication Protocols and Applications.jpg"
+        
+    },
+    {
+        "title": "Computational Intelligence in Information Assurance and Security, vol. 57 of Studies in Computational Intelligence",
+        "authors": "Konstantinos Markantonakis, Keith Mayes, Michael Tunstall, Damien Sauveron, and Fred Piper Chapter in N. Nedjah, A. Abraham, and L. M. Mourelle, Eds.",
+        "text": "pp. 201-233, Springer-Verlag, 2007",
+        "image": "/assets/images/books/Studies in Computational Intelligence.jpg"
+        
+    }
+]

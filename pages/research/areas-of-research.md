@@ -6,7 +6,6 @@ layout: base
 # Areas of Research
 ---
 
-***<mark> SOME OF THESE TITLES HAVE HYPERLINKS BUT THE PAGES THEY GO TO DO NOT EXIST </mark>***
 ### Active Research
 <br />
 

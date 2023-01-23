@@ -88,9 +88,6 @@ title: Konstantinos Markantonakis
         max-height: fit-content;
     }
     .posts{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
         border: 1px solid rgba(0, 0, 0, 0.25);
     }
     .newsRecentWorkContainer{
@@ -99,10 +96,10 @@ title: Konstantinos Markantonakis
         flex-direction: row;
     }
     .newsElement{
-        display: flex;
-        flex-direction: column;
-
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         padding: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -198,7 +195,7 @@ title: Konstantinos Markantonakis
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane show active" id="publications" role="tabpanel" aria-labelledby="home-tab">
-                        {% assign papers = site.data.publications.papers %}
+                        {% assign papers = site.data.publications %}
                         {% for i in (0..9) %}
                             <p>
                                 <span>[{{ papers.size | minus: i }}]</span>
@@ -320,12 +317,12 @@ title: Konstantinos Markantonakis
         </div>
 
         <div class="news">
-            <div class="posts">
+            <div id="carousel" class="posts">
                 <div class="newsElement"">
                     <a href="https://scc.rhul.ac.uk/">
                         <img src="/assets/images/SCC-logo.png" alt="">
                     </a>
-                </div>  
+                </div>
                 <div class="newsElement"">
                     <a href="https://www.royalholloway.ac.uk/">
                         <img src="/assets/images/royalHolloway.jpg" alt="">
@@ -335,10 +332,141 @@ title: Konstantinos Markantonakis
                     <a href="/news">
                         <h4>Latest News!</h4>
                     </a>
-                </div>  
+                </div> 
+                {% for news in site.data.news %}
+                    {% assign titleWords = news.title | downcase | split: ' ' %}
+                    {% assign titleId = titleWords | join: "-" %}
+
+                    <div class="newsElement multine-ellipsis">
+                        <a href="/news#{{titleId}}">
+                            <h4>{{news.title}}</h4>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
         </div>
         
     </div>
+    <style>
+
+        #carouselWrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        #carousel {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        var Carousel = {
+            width: 250,
+            rowHeight: 120,
+            numVisible: 4,
+            duration: 600,
+            padding: 2
+        }
+        function rotateForward() {
+            var carousel = Carousel.carousel,
+                children = carousel.children,
+                firstChild = children[0],
+                lastChild = children[children.length - 1];
+            carousel.insertBefore(lastChild, firstChild);
+        }
+        function rotateBackward() {
+            var carousel = Carousel.carousel,
+            children = carousel.children,
+            firstChild = children[0],
+            lastChild = children[children.length - 1];
+            carousel.insertBefore(firstChild, lastChild.nextSibling);
+        }
+        function animate(begin, end, finalTask) {
+            var wrapper = Carousel.wrapper,
+                carousel = Carousel.carousel,
+                change = end - begin,
+                duration = Carousel.duration,
+                startTime = Date.now();
+            carousel.style.top = begin + 'px';
+            var animateInterval = window.setInterval(function () {
+                var t = Date.now() - startTime;
+                if (t >= duration) {
+                    window.clearInterval(animateInterval);
+                    finalTask();
+                    return;
+                }
+                t /= (duration / 2);
+                var top = begin + (t < 1 ? change / 2 * Math.pow(t, 3) :
+                                            change / 2 * (Math.pow(t - 2, 3) + 2));
+                carousel.style.top = top + 'px';
+            }, 1000 / 60);
+        }
+
+        window.onload = function(){
+            var carousel = Carousel.carousel = document.getElementById('carousel')
+            var carouselItems = carousel.getElementsByTagName('div')
+            var carouselItemWidth = Carousel.width
+            var padding = Carousel.padding
+            var rowHeight = Carousel.rowHeight + (2 * padding)
+
+            for(var i = 0; i < carouselItems.length; i++){
+                var carouselItem = carouselItems[i]
+
+                carouselItem.style.height = rowHeight + 'px'
+                carouselItem.style.width = carouselItemWidth + 'px'
+                carouselItem.style.paddingTop = padding + 'px'
+                carouselItem.style.paddingBottom = padding + 'px'
+            }
+            Carousel.rowHeight = carousel.getElementsByTagName('div')[0].offsetHeight
+            carousel.style.visibility = 'visible';
+            carousel.style.height = Carousel.numVisible * Carousel.rowHeight + 'px'
+
+            var wrapper = Carousel.wrapper = document.createElement('div')
+            wrapper.id = 'carouselWrapper'
+
+            wrapper.style.width = carousel.offsetWidth + 'px'
+            
+            wrapper.style.height = carousel.offsetHeight + 'px'
+
+            carousel.parentNode.insertBefore(wrapper, carousel)
+            wrapper.appendChild(carousel)
+
+            var prevButton = document.getElementById('prev')
+            var nextButton = document.getElementById('next')
+
+            prevButton.onclick = () => {
+                prevButton.disabled = nextButton.disabled = true
+                rotateForward()
+                animate(-Carousel.rowHeight, 0, () => {
+                    carousel.style.top = '0'
+                    prevButton.disabled = nextButton.disabled = false
+                })
+            }
+            nextButton.onclick = () => {
+                prevButton.disabled = nextButton.disabled = true
+                animate(0, -Carousel.rowHeight, () => {
+                    carousel.style.top = '0'
+                    rotateBackward()
+                    prevButton.disabled = nextButton.disabled = false
+                })
+            }
+
+        }
+
+    </script>
+
+    <!-- auto scrolling -->
+    <script>
+        var prevButton = document.getElementById('prev')
+        var nextButton = document.getElementById('next')
+
+        prevButton.style.visibility = 'hidden'
+        nextButton.style.visibility = 'hidden'
+
+        setInterval(() => {
+            nextButton.click()
+        }, 2000)
+    </script>
 
 </div>    

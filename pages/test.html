@@ -1,0 +1,80 @@
+<!-- ---
+layout: base
+permalink: /test
+---
+
+
+<style>
+    .hashLink{
+        scroll-margin-top: 5rem;
+    }
+    #yearLinks{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .yearLink{
+        margin: 1rem;
+
+    }
+</style>
+
+<div id="yearLinks">
+
+</div>
+
+{% assign countdown = site.data.publications | size %}
+<p>Total number of publications: {{countdown}}</p>
+
+{% assign publications = site.data.publications %}
+
+{% assign firstDate =  publications[0].publishDate | split: ' ' %}
+{% assign lastYear = firstDate[-1] %}
+<h3 class="hashLink" id="{{lastYear}}">{{lastYear}}</h3>
+
+{% for publication in publications %}
+    {% assign currentDate =  publication.publishDate | split: ' ' %}
+    {% assign currentYear =  currentDate[-1] %}
+
+    {% if currentYear != lastYear %}
+        <h3 class="hashLink" id="{{currentYear}}">{{currentYear}}</h3>
+        {% assign lastYear = currentYear %}
+    {% endif %}
+
+    <!-- <h3 id="{{ publication }}">{{publication[0]}}</h3> -->
+
+    <p>
+        <span>[{{countdown}}]</span>
+        {% assign countdown = countdown | minus: 1 %}
+
+        {% for author in publication.authors %}
+            {% if author.link %}
+                <a style="display: inline;" href="{{author.link}}">{{author.name}}</a><span>,</span>
+            {% else %}
+                <span>{{author.name}},</span>
+            {% endif %}
+        {% endfor %}
+        <a style="display: inline;" href="{{publication.titleLink}}">"{{ publication.title }}",</a>
+        <span>{{publication.publishDate}}</span>
+
+{% endfor %}
+
+<script>
+    var h3s = document.getElementsByTagName('h3')
+    console.log(h3s)
+
+    var yearLinks = document.getElementById('yearLinks')
+
+    for(h3 of h3s){
+        var div = document.createElement('div')
+        div.classList.add('yearLink')
+
+        var a = document.createElement('a')
+        a.href = '#' + h3.id
+        a.textContent = h3.id
+
+        div.appendChild(a)
+        yearLinks.appendChild(div)
+    }
+</script>
+ -->
