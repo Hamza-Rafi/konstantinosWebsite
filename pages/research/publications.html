@@ -58,7 +58,11 @@ layout: base
                         <span>{{author.name}},</span>
                     {% endif %}
                 {% endfor %}
-                <a style="display: inline;" href="{{publication.titleLink}}">"{{ publication.title }}",</a>
+                {% if publication.titleLink %}
+                    <a style="display: inline;" href="{{publication.titleLink}}">"{{ publication.title }}",</a>
+                {% else %}
+                    <span>"{{publication.title}}"</span>
+                {% endif %}
 
 
                 {% if publication.publishDate != '' %}
