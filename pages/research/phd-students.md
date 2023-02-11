@@ -39,4 +39,4 @@ layout: base
 
 **Prospective PhD Students**
 
-I am constantly seeking strong PhD candidates. For more information please refer to the following section of the website: <http://km.isg.rhul.ac.uk/research/phd-opportunities/>
+I am constantly seeking strong PhD candidates. For more information please refer to [the following section of the website](/research/phd-oppurtunities)
