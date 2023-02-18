@@ -132,20 +132,20 @@ Information available upon request.
 
 ### 2010
 
--   [9^th^ Smart Card Research and Advance Application IFIP Conference (CARDIS) 2010](http://www.cardis.org/)
--   [4^th^ Benelux Workshop on Information and System Security (WISSec)](https://www-crypto.elen.ucl.ac.be/crypto/wissec2009/)
--   [4^th^ Workshop in Information Security Theory and Practices (WISTP) 2010](http://www.wistp.org/)
+-   [9th Smart Card Research and Advance Application IFIP Conference (CARDIS) 2010](http://www.cardis.org/)
+-   [4th Benelux Workshop on Information and System Security (WISSec)](https://www-crypto.elen.ucl.ac.be/crypto/wissec2009/)
+-   [4th Workshop in Information Security Theory and Practices (WISTP) 2010](http://www.wistp.org/)
 -   [International Conference on Security and Cryptography (SECRYPT) 2010](https://secrypt.scitevents.org/SECRYPT2010/)
--   [4^th^ International Workshop on RFID Technology -- Concepts, Applications, Challenges -- IWRT 2010](http://www.iceis.org/Workshops/iwrt/iwrt2010-cfp.htm)
+-   [4th International Workshop on RFID Technology -- Concepts, Applications, Challenges -- IWRT 2010](https://www.researchgate.net/publication/294501328_Proceedings_of_the_4th_International_Workshop_on_RFID_Technology_-_Concepts_Applications_Challenges_IWRT_2010_in_Conjunction_with_ICEIS_2010_Foreword)
 
 ### 2009
 
 -   [Workshop in Information Security Theory and Practices (WISTP) 2009](http://www.wistp.org/)
 -   [Fifth Advanced International Conference on Telecommunications (AICT) 2009](http://www.iaria.org/conferences2009/AICT09.html)
 -   The Fifth International Conference on Information Assurance and Security (IAS) 2009
--   The 3^rd^ International Conference on Information security and Assurance (ISA) 2009
+-   The 3rd International Conference on Information security and Assurance (ISA) 2009
 -   The First International Workshop on Multimedia, Information Privacy and Intelligent Computing Systems (MPIS) 2009
--   [5^th^ International ICST Conference on Security and Privacy in Communication Networks (SecureComm) 2009](http://www.securecomm.org/)
+-   [5th International ICST Conference on Security and Privacy in Communication Networks (SecureComm) 2009](http://www.securecomm.org/)
 -   The First International Workshop on RFID Security and Cryptography 2009 (RISC 09)
 
 ### 2008 and prior
